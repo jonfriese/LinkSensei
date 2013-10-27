@@ -1,14 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JABProject</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <title>LinkSensei</title>
+  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+  <% if current_user.present? %>
+    <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
+  <% else %>
+    <li><%= link_to 'Sign In', user_session_path %></li>
+    <li><%= link_to 'Sign Up', new_user_registration_path%></button></li>
+  <% end %>
+
+  <%= yield %>
 
 </body>
 </html>

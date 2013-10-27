@@ -28,6 +28,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'minitest-rails'
+gem 'devise'
 
 group :assets do
     gem 'anjlab-bootstrap-rails', :require => 'bootstrap-rails',
