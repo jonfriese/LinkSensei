@@ -11,7 +11,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20131028191304) do
+=======
+ActiveRecord::Schema.define(version: 20131028185830) do
+
+  create_table "containers", force: true do |t|
+    t.integer  "user_id"
+    t.string   "name"
+    t.text     "description", limit: 255
+    t.string   "link"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "links", force: true do |t|
+    t.string   "url"
+    t.string   "name"
+    t.string   "description"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -26,7 +48,11 @@ ActiveRecord::Schema.define(version: 20131028191304) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+<<<<<<< HEAD
     t.string   "name"
+=======
+    t.integer  "containers"
+>>>>>>> 2e7e5698a6b2bfb349c9ce72cb0bdec658f232c6
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
