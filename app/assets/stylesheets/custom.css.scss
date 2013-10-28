@@ -1,12 +1,10 @@
 @import "twitter/bootstrap";
 
 body  {
-  background-color: #67001a;
+  background-color: #67001a !important;
 }
 
 .form-control:focus, .form-control:focus + span .btn{
     border-color:#e8c15f;
     box-shadow: 0px 0px 1px #e8c15f !important;
-;
-    box-shadow:none;
 }

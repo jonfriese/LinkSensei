@@ -9,6 +9,17 @@
   float: right;
 }
 
-.forgot  {
+.forgot-pass  {
   margin-left: 5px;
+  color: black;
+  &:visited  {
+    color: black;
+  }
+  &:hover {
+    background-color: whitesmoke;
+  }
+}
+
+.landing-page  {
+  background-color: whitesmoke;
 }
