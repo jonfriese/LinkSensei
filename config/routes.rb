@@ -70,9 +70,5 @@ JABProject::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-<<<<<<< HEAD
 
- # match 'users/:id' => 'users#show'
-=======
->>>>>>> 2e7e5698a6b2bfb349c9ce72cb0bdec658f232c6
 end
