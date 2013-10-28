@@ -58,5 +58,5 @@ JABProject::Application.routes.draw do
   #     resources :products
   #   end
 
-  match 'users/:id' => 'users#show'
+  # match 'users/:id' => 'users#show'
 end
