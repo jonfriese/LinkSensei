@@ -11,6 +11,10 @@
 
   <tbody>
     <% @containers.each do |container| %>
+
+      <h3><%= container.name %></h3>
+      <h3><%= container.description %></h3>
+
       <tr>
         <td><%= link_to 'Show', container %></td>
         <td><%= link_to 'Edit', edit_container_path(container) %></td>
