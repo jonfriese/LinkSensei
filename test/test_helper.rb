@@ -19,8 +19,11 @@ class ActiveSupport::TestCase
 end
 
 def sign_in
-  visit new_user_session_path
-  fill_in "Email", with: users(:user).email
+
+  visit '/'
+
+  fill_in "Enter email", with: users(:user).email
   fill_in "Password", with: "password"
+
   click_on "Sign in"
 end
