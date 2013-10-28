@@ -3,6 +3,9 @@ JABProject::Application.routes.draw do
   root 'welcome#index'
 
   devise_for :users
+  resources :users, :only => [:show]
+  get 'users/:id', to: 'users#show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -58,5 +61,5 @@ JABProject::Application.routes.draw do
   #     resources :products
   #   end
 
-  # match 'users/:id' => 'users#show'
+
 end
