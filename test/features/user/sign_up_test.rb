@@ -5,9 +5,7 @@ class User::SignUpTest < Capybara::Rails::TestCase
 
     visit root_path
 
-    click_link "Sign Up"
-
-    fill_in "Email", with: "tester@example.com"
+    fill_in "Enter email", with: "tester@example.com"
     fill_in "Password", with: "test1234"
     fill_in "Password confirmation", with: "test1234"
 
