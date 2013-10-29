@@ -13,17 +13,6 @@
   float: right;
 }
 
-.forgot-pass  {
-  margin-left: 5px;
-  color: black;
-  &:visited  {
-    color: black;
-  }
-  &:hover {
-    background-color: whitesmoke;
-  }
-}
-
 .main-description  {
   margin-right: 20px;
 }
@@ -41,4 +30,22 @@
 .form-control:focus, .form-control:focus + span .btn{
     border-color:#e8c15f;
     box-shadow: 0px 0px 1px #e8c15f !important;
+}
+
+.rme-fgotpas {
+  font-size: .9em;
+}
+
+.forgot-pass  {
+  margin-left: 5px;
+}
+
+/* line break in sign in page */
+#welcome-page-hr  {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#btn-sign-in  {
+  margin-top: 5px;
 }
