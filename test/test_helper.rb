@@ -43,4 +43,23 @@ class ActiveSupport::TestCase
     page.has_content? "Edit"
     page.has_content? "Destroy"
   end
+
+  def create_link
+    #Then a modal window form should appear, and is filled in
+    click_on "Show"
+    click_on "Add Link"
+    fill_in "Url", with: "www.google.com"
+    fill_in "Name", with: "Google"
+    fill_in "Description", with: "a search engine"
+    click_on "Create Link"
+
+    # #Then the resulting page should show the new link in the staging area
+    page.has_content? "Google"
+    page.has_content? "www.google.com"
+    page.has_content? "a search engine"
+    page.has_content? "Show"
+    page.has_content? "Edit"
+    page.has_content? "Destroy"
+  end
+
 end
