@@ -12,11 +12,8 @@ feature "A user can sign in" do
   end
 
   scenario "A user gives invalid data" do
-    click "Sign in"
-  end
-
-  scenario "User tries to sign in with invalid data" do
-    click "Sign in"
-    page.text.must_include "You need to sign in or sign up"
+    visit root_path
+    click_on "Sign in"
+    page.text.must_include "Sign in"
   end
 end
