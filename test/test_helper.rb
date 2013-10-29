@@ -22,8 +22,10 @@ def sign_in
 
   visit '/'
 
-  fill_in "Enter email", with: users(:user).email
-  fill_in "Password", with: "password"
+  within("//div[@id='signin']") do
+    fill_in "user[email]", with: users(:user).email
+    fill_in "Password", with: "password"
+  end
 
   click_on "Sign in"
 end
