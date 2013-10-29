@@ -17,7 +17,6 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
   def sign_in
-
     visit '/'
     within("//div[@id='signin']") do
       fill_in "user[email]", with: users(:user).email
@@ -25,5 +24,23 @@ class ActiveSupport::TestCase
     end
 
     click_on "Sign in"
+  end
+
+  def create_container
+    #Given a signed-in user
+    # sign_in
+    #When the user clicks the add container button in the main window
+    click_on "New Container"
+    # #Then a modal window form should appear, and is filled in
+    fill_in "Name", with: "A container"
+    fill_in "Description", with: "A description"
+    click_on "Create Container"
+    # save_and_open_page
+    # #Then the resulting page should show the new container in the index
+    page.has_content? "A container"
+    page.has_content? "A description"
+    page.has_content? "Show"
+    page.has_content? "Edit"
+    page.has_content? "Destroy"
   end
 end

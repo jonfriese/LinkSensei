@@ -11,7 +11,7 @@
 
   <tbody>
     <% @containers.each do |container| %>
-      <tr>
+      <tr id="<%= dom_id(container) %>">
         <td><%= container.name %></td>
         <td><%= container.description %></td>
         <td><%= link_to 'Show', user_container_path(@user, container) %>
