@@ -17,13 +17,6 @@ body  {
 
 }
 
-
-
-.form-control:focus, .form-control:focus + span .btn{
-    border-color:#e8c15f;
-    box-shadow: 0px 0px 1px #e8c15f !important;
-}
-
 .alert {
   color: black;
 }
@@ -34,6 +27,12 @@ a  {
   }
 }
 
-.brand  {
-  font-family: sf_wasabiregular;
+button  {
+  &:focus  {
+    outline: none;
+  }
+}
+
+.container {
+  margin-top:60px;
 }

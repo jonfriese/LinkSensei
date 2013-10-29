@@ -5,9 +5,11 @@ class User::SignUpTest < Capybara::Rails::TestCase
 
     visit root_path
 
-    fill_in "Enter email", with: "tester@example.com"
-    fill_in "Password", with: "test1234"
-    fill_in "Password confirmation", with: "test1234"
+    within("//div[@id='signup']") do
+      fill_in "Enter email", with: "tester@example.com"
+      fill_in "Password", with: "test1234"
+      fill_in "Confirm password", with: "test1234"
+    end
 
     click_on "Sign up"
 
