@@ -25,6 +25,7 @@ group :development, :test do
   gem 'turn'
   gem 'pry'
   gem 'sqlite3'
+  gem 'simplecov', :require => false
 end
 
 
