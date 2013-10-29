@@ -6,5 +6,6 @@
       <%= link_to "Sign in", new_user_session_path %>
     <% end %>
 
-<%= link_to 'New Container', new_user_container_path(@user) %>
+<p><%= link_to 'New Container', new_user_container_path(@user) %></p>
+<p><%= link_to 'Containers list', user_containers_path(@user) %></p>
 
