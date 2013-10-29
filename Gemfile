@@ -18,7 +18,7 @@ gem 'sass-rails', '~> 4.0.0'
 
 group :development, :test do
   gem 'launchy'
-  gem 'capybara-webkit'
+#  gem 'capybara-webkit'
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
   gem 'capybara_minitest_spec'
