@@ -12,8 +12,8 @@
   <tbody>
     <% @containers.each do |container| %>
       <tr>
-        <td><h3><%= container.name %></h3></td>
-        <td><h3><%= container.description %></h3></td>
+        <td><%= container.name %></td>
+        <td><%= container.description %></td>
         <td><%= link_to 'Show', user_container_path(@user, container) %>
         <%= link_to 'Edit', edit_user_container_path(@user, container) %>
         <%= link_to 'Destroy', [@user, container], method: :delete, data: { confirm: 'Are you sure?' } %></td>

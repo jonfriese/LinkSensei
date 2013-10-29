@@ -1,5 +1,6 @@
 JABProject::Application.routes.draw do
   root 'welcome#index'
+  # root 'containers#index'
 
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
