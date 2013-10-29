@@ -27,16 +27,32 @@
 <div class="container" >
   <div class="col-lg-3 col-lg-offset-1">
 
-    <% if user_signed_in? %>
-      Signed in as <%= current_user.email %>. Not you?
-      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-    <% else %>
-      <%= link_to "Sign up", new_user_registration_path %> or
-      <%= link_to "Sign in", new_user_session_path %>
-    <% end %>
-
 <p><%= link_to 'New Container', new_user_container_path(@user) %></p>
-<p><%= link_to 'Containers list', user_containers_path(@user) %></p>
+
+<h1>Containers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @user.containers.each do |container| %>
+      <tr>
+        <td><%= container.name %></td>
+        <td><%= container.description %></td>
+        <td><%= link_to 'Show', user_container_path(@user, container) %>
+        <%= link_to 'Edit', edit_user_container_path(@user, container) %>
+        <%= link_to 'Destroy', [@user, container], method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
   </div>
   <div class="col-lg-7"

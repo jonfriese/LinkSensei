@@ -8,6 +8,10 @@ JABProject::Application.routes.draw do
     resources :containers
   end
 
+  resources :containers do
+    resources :links
+  end
+
   resources :users, :only => [:show]
   get 'users/:id', to: 'users#show'
 

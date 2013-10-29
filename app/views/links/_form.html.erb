@@ -1,20 +1,22 @@
-<%= form_for [@user, @container] do |f| %>
-  <% if @container.errors.any? %>
+<%= form_for [@container, @link] do |f| %>
+  <% if @link.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@container.errors.count, "error") %> prohibited this container from being saved:</h2>
+      <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
 
       <ul>
-      <% @container.errors.full_messages.each do |msg| %>
+      <% @link.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-
+  <div class="field">
+    <%= f.label :url %><br />
+    <%= f.text_field :url %>
+  </div>
 
   <div class="field">
-    <% f.hidden_field :user_id %>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
