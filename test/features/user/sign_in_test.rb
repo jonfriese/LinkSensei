@@ -11,11 +11,14 @@ feature "A user can sign in" do
   	page.must_have_link("New Container")
   end
 
-  scenario "A user gives invalid data" do
-    click "Sign in"
-
   scenario "User tries to sign in with invalid data" do
     click "Sign in"
     page.text.must_include "You need to sign in or sign up"
+  end
+
+  scenario "user visits home page while signed in" do
+    sign_in
+    visit root_path
+    page.must_have_content "New Container"
   end
 end
