@@ -1,16 +1,18 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
-<div class="container">
-  <div class="col-lg-8 landing-page">
-    <h1 class="brand">Link Sensei</h1>
+<div class="landing-page">
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <div class="container">
+    <div class="col-lg-8 main-description">
+      <h1 class="brand">Link Sensei</h1>
 
-  </div>
-  <div class="col-lg-3">
-    <div class="row">
-      <%= render 'devise/layouts/signup' %>
     </div>
-    <div class="row">
-      <%= render 'devise/layouts/signin' %>
+    <div class="col-lg-3">
+      <div class="row">
+        <%= render 'devise/layouts/signin' %>
+      </div>
+      <div class="row">
+        <%= render 'devise/layouts/signup' %>
+      </div>
     </div>
   </div>
 </div>

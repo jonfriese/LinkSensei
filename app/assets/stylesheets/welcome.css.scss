@@ -1,5 +1,9 @@
-
 /* Sign In & Sign Up */
+
+.landing-page  {
+  background-color: #67001a !important;
+  margin-top: -10px;
+}
 
 #sign-in  {
   float: right;
@@ -20,6 +24,21 @@
   }
 }
 
-.landing-page  {
+.main-description  {
   margin-right: 20px;
+}
+
+.form-title  {
+  margin-top: 0px;
+}
+
+.brand  {
+  font-family: sf_wasabiregular;
+  color: white;
+  margin-top: 0px;
+}
+
+.form-control:focus, .form-control:focus + span .btn{
+    border-color:#e8c15f;
+    box-shadow: 0px 0px 1px #e8c15f !important;
 }
