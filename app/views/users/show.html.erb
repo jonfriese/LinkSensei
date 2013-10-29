@@ -19,34 +19,7 @@
         </span>
     </div><!-- /input-group -->
   </div>
-</div>
-
-<p><%= link_to 'New Container', new_user_container_path(@user) %></p>
-
-<h1>Containers</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Actions</th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @user.containers.each do |container| %>
-      <tr>
-        <td><%= container.name %></td>
-        <td><%= container.description %></td>
-        <td><%= link_to 'Show', user_container_path(@user, container) %>
-        <%= link_to 'Edit', edit_user_container_path(@user, container) %>
-        <%= link_to 'Destroy', [@user, container], method: :delete, data: { confirm: 'Are you sure?' } %>
-        </td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-  <div class="col-lg-7">
+   <div class="col-lg-7">
     <p><%= link_to 'New Container', new_user_container_path(@user) %></p>
     <h1>Containers</h1>
     <table>
@@ -70,6 +43,7 @@
         <% end %>
       </tbody>
     </table>
-
   </div>
+
 </div>
+
