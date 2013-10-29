@@ -13,6 +13,7 @@ feature "A user can sign in" do
 
   scenario "A user gives invalid data" do
     click "Sign in"
+  end
 
   scenario "User tries to sign in with invalid data" do
     click "Sign in"

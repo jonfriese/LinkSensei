@@ -805,6 +805,14 @@
         1,
         null,
         null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        0,
+        null,
         null
       ],
       "/home/jon/rails/JAB_project/test/features/user/sign_out_test.rb": [
@@ -826,18 +834,20 @@
         null,
         1,
         1,
-        null,
+        1,
+        1,
+        1,
+        1,
         1,
         null,
         1,
         1,
+        null,
+        null,
         1,
         1,
         null,
         null,
-        1,
-        null,
-        1,
         null,
         null
       ],
@@ -871,8 +881,10 @@
         null,
         null,
         1,
+        null,
         1,
         10,
+        null,
         null,
         null
       ],
@@ -984,6 +996,6 @@
         null
       ]
     },
-    "timestamp": 1383081888
+    "timestamp": 1383084703
   }
 }
