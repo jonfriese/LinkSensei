@@ -1,7 +1,6 @@
 JABProject::Application.routes.draw do
-
-
   root 'welcome#index'
+  # root 'containers#index'
 
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
@@ -9,11 +8,12 @@ JABProject::Application.routes.draw do
     resources :containers
   end
 
+  resources :containers do
+    resources :links
+  end
+
   resources :users, :only => [:show]
   get 'users/:id', to: 'users#show'
-
-
-
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -69,5 +69,4 @@ JABProject::Application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
 end

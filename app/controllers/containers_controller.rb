@@ -1,4 +1,5 @@
 class ContainersController < ApplicationController
+  # before_action :authenticate_user!
   before_action :set_container, only: [:show, :edit, :update, :destroy]
   before_action :load_user
 
@@ -11,7 +12,6 @@ class ContainersController < ApplicationController
   # GET /containers/1
   # GET /containers/1.json
   def show
-    @container = @user.containers
   end
 
   # GET /containers/new
@@ -31,6 +31,7 @@ class ContainersController < ApplicationController
 
     respond_to do |format|
       if @container.save
+        current_user.containers << @container
         format.html { redirect_to user_containers_path(@user), notice: 'Container was successfully created.' }
         format.json { render action: 'show', status: :created, location: @container }
       else
@@ -72,7 +73,7 @@ class ContainersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def container_params
-      params.require(:container).permit[:description]
+      params.require(:container).permit(:name, :description)
     end
 
     def load_user

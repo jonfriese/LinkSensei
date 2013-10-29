@@ -9,7 +9,7 @@ feature "A user can sign in" do
       fill_in "Confirm password", with: "test1234"
     end
     click_on "Sign up"
-    page.text.must_include "Welcome! You have signed up successfully."
+    page.text.must_include "tester@example.com"
   end
 
   scenario "user tries to sign up with invalid data" do
