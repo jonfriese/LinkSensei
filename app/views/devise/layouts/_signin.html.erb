@@ -16,7 +16,7 @@
   <hr id="welcome-page-hr">
   <%- if devise_mapping.omniauthable? %>
     <%- resource_class.omniauth_providers.each do |provider| %>
-      <%= link_to image_tag("sign-in-twitter.png",alt:'twitter', id:"twitter"), omniauth_authorize_path(resource_name, provider) %><br />
+      <%= link_to image_tag("sign-in-twitter.png", alt:'twitter', id:"twitter"), omniauth_authorize_path(resource_name, provider) %><br />
     <% end -%>
   <% end -%>
   <span id="signinButton">

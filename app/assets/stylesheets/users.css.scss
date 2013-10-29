@@ -1,3 +1,43 @@
-.navbar  {
+
+.navbar-brand  {
+   color: white !important;
+}
+
+#users-show  {
+  padding-top: 60px;
+}
+
+.logo {
+  float:left;
+  list-style: none;
+}
+
+.fixed-nav  {
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 50px;
   background-color: #67001a;
 }
+
+.links  {
+  list-style: none;
+  float: right;
+  padding-top: 15px;
+}
+
+.links > li  {
+  display: inline;
+
+}
+
+.links > li > a {
+  display: inline;
+    color: white;
+    text-shadow: none;
+    &:hover {
+      background-color: #67001a;
+      color: white;
+    }
+}
+
