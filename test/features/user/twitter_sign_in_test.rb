@@ -12,6 +12,6 @@ class User::TwitterSignInTest < Capybara::Rails::TestCase
                      info: { nickname: 'test_twitter_user'},
                     })
     click_on "twitter"
-    page.must_have_content "Signed in as test_twitter_user-changeme@twitter.example.com"
+    page.must_have_content "test_twitter_user-changeme@twitter.example.com"
   end
 end
