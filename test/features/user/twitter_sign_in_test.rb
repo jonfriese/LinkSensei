@@ -12,7 +12,8 @@ class User::TwitterSignInTest < Capybara::Rails::TestCase
                      info: { nickname: 'test_twitter_user'},
                     })
 
-    click_on "Sign in with Twitter"
+    # click_on "Sign in with Twitter"
+    find("#twitter").click
     page.must_have_content "test_twitter_user, you are signed in!"
   end
 end

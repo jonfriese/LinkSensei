@@ -1,6 +1,6 @@
 # require "test_helper"
 
-# feature "As a site user, I want to to add a container to my collection so that I can store links" do
+# feature " " do
 
 #   #happy paths
 #   scenario "User creates a new container" do

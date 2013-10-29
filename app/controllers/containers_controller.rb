@@ -31,6 +31,7 @@ class ContainersController < ApplicationController
 
     respond_to do |format|
       if @container.save
+        current_user.containers << @container
         format.html { redirect_to user_containers_path(@user), notice: 'Container was successfully created.' }
         format.json { render action: 'show', status: :created, location: @container }
       else
