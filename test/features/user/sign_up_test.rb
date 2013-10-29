@@ -13,6 +13,6 @@ class User::SignUpTest < Capybara::Rails::TestCase
 
     click_on "Sign up"
 
-    page.text.must_include "Welcome! You have signed up successfully."
+    page.text.must_include "Signed in as tester@example.com."
   end
 end
