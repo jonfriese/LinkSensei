@@ -13,8 +13,10 @@ feature "A user can sign in" do
   end
 
   scenario "user tries to sign up with invalid data" do
-    click on "Sign up"
-
+    visit root_path
+    click_on "Sign up"
+    page.text.must_include "prohibited"
+    page.text.must_include "Sign up"
   end
 
 end
