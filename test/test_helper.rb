@@ -16,16 +16,14 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
-end
+  def sign_in
 
-def sign_in
+    visit '/'
+    within("//div[@id='signin']") do
+      fill_in "user[email]", with: users(:user).email
+      fill_in "Password", with: "password"
+    end
 
-  visit '/'
-
-  within("//div[@id='signin']") do
-    fill_in "user[email]", with: users(:user).email
-    fill_in "Password", with: "password"
+    click_on "Sign in"
   end
-
-  click_on "Sign in"
 end

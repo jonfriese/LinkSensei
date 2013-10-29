@@ -5,8 +5,6 @@ class User::SignOutTest < Capybara::Rails::TestCase
 
     sign_in
 
-    visit
-
     click_on "Sign Out"
 
     page.text.must_include "Signed out successfully."
