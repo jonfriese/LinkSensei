@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-JABProject::Application.config.secret_key_base = ENV['DEVISE_SECRET_KEY']
+JABProject::Application.config.secret_key_base = ENV['RAILS_TOKEN']
