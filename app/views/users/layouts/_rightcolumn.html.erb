@@ -11,20 +11,16 @@
           </thead>
           <tbody>
             <tr>
-              <td><%= container.name %></td>
-              <td></td>
-              <td><%= container.description %></td>
-              <td><%= link_to 'Show', user_container_path(@user, container) %> |
-              <%= link_to 'Edit', edit_user_container_path(@user, container) %> |
-              <%= link_to 'Destroy', [@user, container], method: :delete, data: { confirm: 'Are you sure?' } %> | <%= link_to 'Links', container_links_path(container) %></td>
+
+
+
+              <td><%= link_to 'Show', user_container_path(@user, container) %> </td>
+              <td><%= link_to 'Edit', edit_user_container_path(@user, container) %> </td>
+              <td><%= link_to 'Destroy', [@user, container], method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+              <td> <%= link_to 'Links', container_links_path(container) %></td>
             </tr>
-            <tr><td><b>Links</b></td><td></td><td></td><td></td></tr>
-            <tr>
-              <th>Name</th>
-              <th>URL</th>
-              <th>Description</th>
-              <th>Actions</th>
-            </tr>
+
+
             <% container.links.each do |link| %>
               <tr>
                 <td><%= link.name %></td>
