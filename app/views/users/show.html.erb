@@ -1,5 +1,7 @@
 <nav class="fixed-nav">
-  <li class="logo"><a class="navbar-brand" href="#">Link Sensei</a></li>
+
+  <li class="logo"><a class="navbar-brand brand" href="#">Link Sensei</a></li>
+
   <ul class="links nav">
     <li class="<%= 'active' if current_page?(root_path)%>">
       <%= link_to "Home", root_path, class:"nav-link" %>
@@ -24,8 +26,8 @@
     <h1>Containers</h1>
     <p><%= link_to 'New Container', new_user_container_path(@user) %></p>
     <% @user.containers.each do |container| %>
-      <div id="<%= dom_id(container) %>">
-        <table style="border: 2px solid black">
+      <div class="well" id="<%= dom_id(container) %>">
+        <table class="table">
           <thead>
             <tr>
               <th>Name</th>
