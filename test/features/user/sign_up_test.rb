@@ -1,15 +1,16 @@
 require "test_helper"
 
-feature "A user can sign in" do
+feature "A user can sign up" do
   scenario "user sign up" do
     visit root_path
     within("//div[@id='signup']") do
+      fill_in "Full Name", with: "Test Guy"
       fill_in "Enter email", with: "tester@example.com"
       fill_in "Password", with: "test1234"
       fill_in "Confirm password", with: "test1234"
     end
     click_on "Sign up"
-    page.text.must_include "tester@example.com"
+    page.text.must_include "Test Guy"
   end
 
   scenario "user tries to sign up with invalid data" do
