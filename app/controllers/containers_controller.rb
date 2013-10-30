@@ -32,7 +32,7 @@ class ContainersController < ApplicationController
     respond_to do |format|
       if @container.save
         current_user.containers << @container
-        format.html { redirect_to user_containers_path(@user), notice: 'Container was successfully created.' }
+        format.html { redirect_to user_path(@user), notice: 'Container was successfully created.' }
         format.json { render action: 'show', status: :created, location: @container }
       else
         format.html { render action: 'new' }
@@ -46,7 +46,7 @@ class ContainersController < ApplicationController
   def update
     respond_to do |format|
       if @container.update(container_params)
-        format.html { redirect_to [@user, @container], notice: 'Container was successfully updated.' }
+        format.html { redirect_to user_path(@user), notice: 'Container was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -60,7 +60,7 @@ class ContainersController < ApplicationController
   def destroy
     @container.destroy
     respond_to do |format|
-      format.html { redirect_to user_containers_url }
+      format.html { redirect_to user_path(@user)}
       format.json { head :no_content }
     end
   end
