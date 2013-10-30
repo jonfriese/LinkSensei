@@ -3,7 +3,7 @@ require "test_helper"
 feature "A user can sign in" do
   scenario "Sign in works" do
     sign_in
-    page.text.must_include "test@example.com"
+    page.text.must_include "Testy Tester"
   end
 
   scenario "A user gets redirected to their profile page after signing in" do
@@ -11,9 +11,11 @@ feature "A user can sign in" do
   	page.must_have_link("New Container")
   end
 
-  scenario "User tries to sign in with invalid data" do
-    click "Sign in"
-    page.text.must_include "You need to sign in or sign up"
+  scenario "A user gives invalid data" do
+    visit root_path
+    click_on "Sign in"
+    page.text.must_include "Sign in"
+
   end
 
   scenario "user visits home page while signed in" do

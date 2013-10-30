@@ -3,5 +3,5 @@
 <p><%= @link.url %></p>
 <p><%= @link.description %></p>
 <%= link_to 'Edit', edit_container_link_path(@container, @link) %> |
-<%= link_to 'Back', container_links_path %>
-
+<%= link_to 'Back', container_links_path %> |
+<%= link_to 'Home', user_path(current_user) %>

@@ -1,4 +1,5 @@
 JABProject::Application.routes.draw do
+
   root 'welcome#index'
   # root 'containers#index'
 
