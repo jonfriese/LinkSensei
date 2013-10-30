@@ -1,5 +1,5 @@
 <nav class="fixed-nav">
-  <li class="logo"><%= link_to "Link Sensei", root_path, class:"navbar-brand" %></li>
+  <li class="logo"><%= link_to "Link Sensei", root_path, class:"navbar-brand brand" %></li>
   <ul class="links nav">
     <li class="<%= 'active' if current_page?(root_path)%>">
       <%= link_to "Home", root_path, class:"nav-link" %>
@@ -55,8 +55,8 @@
                 <td><%= link.name %></td>
                 <td><%= link_to link.url, url_with_protocol(link.url), :target => '_blank' %></td>
                 <td><%= link.description %></td>
-                <td><%= link_to 'Show', container_link_path(@container, link) %>
-                <%= link_to 'Edit', edit_container_link_path(@container, link) %>
+                <td><%= link_to 'Show', container_link_path(container, link) %>
+                <%= link_to 'Edit', edit_container_link_path(container, link) %>
                 <%= link_to 'Destroy', [container, link], method: :delete, data: { confirm: 'Are you sure?' } %></td>
               </tr>
             <% end %>
