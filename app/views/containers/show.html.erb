@@ -16,7 +16,7 @@
     <% @container.links.each do |link| %>
       <tr>
         <td><%= link.name %></td>
-        <td><%= link.url %></td>
+        <td><%= link_to link.url, link.url %></td>
         <td><%= link.description %></td>
         <td><%= link_to 'Show', container_link_path(@container, link) %>
         <%= link_to 'Edit', edit_container_link_path(@container, link) %>
