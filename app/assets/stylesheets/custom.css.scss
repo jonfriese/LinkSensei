@@ -26,10 +26,19 @@ a  {
   }
 }
 
-button  {
+.form-control:focus, .form-control:focus + span .btn{
+    border-color:#e8c15f;
+    outline: 5px auto #e8c15f;
+   outline-offset: -2px;
+}
+
+.custombtn  {
   &:focus  {
-    outline: none;
+  outline: 5px auto #e8c15f;
+  outline-offset: -2px;
   }
 }
+
+
 
 

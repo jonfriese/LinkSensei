@@ -28,11 +28,6 @@
   margin-top: 0px;
 }
 
-.form-control:focus, .form-control:focus + span .btn{
-    border-color:#e8c15f;
-    box-shadow: 0px 0px 1px #e8c15f !important;
-}
-
 .rme-fgotpas {
   font-size: .9em;
   color: #292929;
@@ -46,6 +41,7 @@
 #welcome-page-hr  {
   margin-top: 10px;
   margin-bottom: 10px;
+  border-color:#e0e0e0;
 }
 
 #btn-sign-in  {
