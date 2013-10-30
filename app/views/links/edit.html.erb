@@ -5,4 +5,5 @@
 
 <%= link_to 'Show', [@container, @link] %> |
 <%= link_to 'Back', container_links_path %>
+<%= link_to 'Destroy', [@container, @link], method: :delete, data: { confirm: 'Are you sure?' } %>
 </div>

@@ -8,8 +8,20 @@
 
   </div><!-- /input-group -->
 <div>
-<% @staging.links.each do |c| %>
+<%= link_to 'Add Link', new_container_link_path(@staging) %>
+<% @staging.each do |c| %>
   <%= c.name %>
+  <% c.links.each do |link| %>
+    <tr>
+      <td><%= link.name %></td>
+      <td><%= link_to link.url, url_with_protocol(link.url), :target => '_blank' %></td>
+      <td><%= link.description %></td>
+      <td><%= link_to 'Show', container_link_path(@staging, link) %>
+      <%= link_to 'Edit', edit_container_link_path(@staging, link) %>
+
+    </tr>
+  <% end %>
 <% end %>
+
 </div>
 
