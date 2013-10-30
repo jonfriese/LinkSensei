@@ -1,0 +1,41 @@
+    <p><%= link_to 'New Container', new_user_container_path(@user) %></p>
+    <% @user.containers.each do |container| %>
+      <div class="well col-lg-5 cont-well" id="<%= dom_id(container) %>">
+        <table class="table">
+          <thead>
+            <tr>
+              <th colspan="4"><%= container.name %>
+               <a class="info-pop" href="#" data-toggle="popover" data-placement="right" data-content="<%= container.description %>" data-original-title="Description"><span class="glyphicon glyphicon-info-sign"></span></a>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><%= container.name %></td>
+              <td></td>
+              <td><%= container.description %></td>
+              <td><%= link_to 'Show', user_container_path(@user, container) %> |
+              <%= link_to 'Edit', edit_user_container_path(@user, container) %> |
+              <%= link_to 'Destroy', [@user, container], method: :delete, data: { confirm: 'Are you sure?' } %> | <%= link_to 'Links', container_links_path(container) %></td>
+            </tr>
+            <tr><td><b>Links</b></td><td></td><td></td><td></td></tr>
+            <tr>
+              <th>Name</th>
+              <th>URL</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </tr>
+            <% container.links.each do |link| %>
+              <tr>
+                <td><%= link.name %></td>
+                <td><%= link_to link.url, url_with_protocol(link.url), :target => '_blank' %></td>
+                <td><%= link.description %></td>
+                <td><%= link_to 'Show', container_link_path(@container, link) %>
+                <%= link_to 'Edit', edit_container_link_path(@container, link) %>
+                <%= link_to 'Destroy', [container, link], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+      </div>
+    <% end %>
