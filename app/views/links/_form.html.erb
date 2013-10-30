@@ -1,4 +1,4 @@
-<%= form_for [@container, @link] do |f| %>
+<%= form_for [@container, @link], html: {role:"form"}  do |f| %>
   <% if @link.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@link.errors.count, "error") %> prohibited this link from being saved:</h2>
@@ -11,23 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
+  <div class="form-group">
+    <div class="field">
+      <%= f.label :url %><br />
+      <%= f.text_field :url %>
+    </div>
+
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name, class:"form-control" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :description %><br />
+      <%= f.text_area(:description, rows: 10, class:"form-control") %>
+    </div>
+
+    <div class="actions" style="margin-top: 1em;">
+    <%= f.submit(class: "btn btn-default btn-small custombtn") %>
   </div>
-
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area(:description, rows: 10) %>
-  </div>
-
-
-  <div class="actions">
-    <%= f.submit %>
   </div>
 <% end %>
+<%= link_to 'Home', user_path(current_user) %>
