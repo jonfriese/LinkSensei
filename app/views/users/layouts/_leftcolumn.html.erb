@@ -1,27 +1,34 @@
-
-  <div class="input-group">
-    <input type="text" class="form-control" placeholder="Start sorting!">
-    <span class="input-group-btn custombtn">
-      <button class="btn btn-default custombtn" type="button"><span class="glyphicon glyphicon-search"></span></button>
-    </span>
-
-
-  </div><!-- /input-group -->
-<div>
 <%= link_to 'Add Link', new_container_link_path(@staging) %>
-<% @staging.each do |c| %>
-  <%= c.name %>
-  <% c.links.each do |link| %>
+<% @staging.each do |staging| %>
+<div>
+  <table class="table">
+    <thead>
+      <tr>
+        <th colspan="4"><%= staging.name %>
+         <a class="info-pop" href="#" data-toggle="popover" data-placement="right" data-content="<%= staging.description %>" data-original-title="Description"><span class="glyphicon glyphicon-info-sign"></span></a>
+       </th>
+     </tr>
+   </thead>
+   <tbody>
+
+    <tr><td><b>Links</b></td><td></td><td></td><td></td></tr>
+    <tr>
+      <th>Name</th>
+      <th>URL</th>
+      <th>Description</th>
+      <th>Actions</th>
+    </tr>
+    <% staging.links.each do |link| %>
     <tr>
       <td><%= link.name %></td>
       <td><%= link_to link.url, url_with_protocol(link.url), :target => '_blank' %></td>
       <td><%= link.description %></td>
-      <td><%= link_to 'Show', container_link_path(@staging, link) %>
-      <%= link_to 'Edit', edit_container_link_path(@staging, link) %>
-
-    </tr>
-  <% end %>
-<% end %>
-
+      <td><%= link_to 'Show', container_link_path(staging, link) %>
+        <%= link_to 'Edit', edit_container_link_path(staging, link) %>
+        <%= link_to 'Destroy', [staging, link], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
-
+<% end %>

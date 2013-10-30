@@ -23,7 +23,7 @@ class LinksController < ApplicationController
     respond_to do |format|
       if @link.save
         @container.links << @link
-        format.html { redirect_to container_links_path(@container), notice: 'Link was successfully created.' }
+        format.html { redirect_to user_path(current_user), notice: 'Link was successfully created.' }
         format.json { render action: 'show', status: :created, location: @link }
       else
         format.html { render action: 'new' }
@@ -35,7 +35,7 @@ class LinksController < ApplicationController
   def update
     respond_to do |format|
       if @link.update(link_params)
-        format.html { redirect_to [@container, @link], notice: 'Link was successfully updated.' }
+        format.html { redirect_to user_path(current_user), notice: 'Link was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -47,7 +47,7 @@ class LinksController < ApplicationController
   def destroy
     @link.destroy
     respond_to do |format|
-      format.html { redirect_to container_links_url }
+      format.html { redirect_to user_path(current_user) }
       format.json { head :no_content }
     end
   end
