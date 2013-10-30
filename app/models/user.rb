@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :containers
   validates :name, presence: true
+  # after_create :create_unsorted_container
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
@@ -37,4 +38,10 @@ class User < ActiveRecord::Base
       super
     end
   end
+
+  # def create_unsorted_container
+  #   @container = current_user.containers.new(container_params)
+  #   @container.user_id = current_user.id
+  #   current_user.containers << @container
+  # end
 end
