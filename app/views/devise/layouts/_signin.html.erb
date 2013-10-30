@@ -11,7 +11,7 @@
     <% if devise_mapping.rememberable? -%>
       <span class="rme-fgotpas"><%= f.check_box :remember_me %> <%= f.label :remember_me %> <%= link_to "Forgot password?", new_password_path(resource_name), class:"forgot-pass" %></span>
     <% end -%>
-    <div><%= f.submit "Sign in", class:"btn btn-default btn-small", id:'btn-sign-in' %></div>
+    <div><%= f.submit "Sign in", class:"btn btn-default btn-small custombtn", id:'btn-sign-in' %></div>
   <% end %>
   <hr id="welcome-page-hr">
   <%- if devise_mapping.omniauthable? %>
@@ -19,15 +19,6 @@
       <%= link_to image_tag("sign-in-twitter.png", alt:'twitter', id:"twitter"), omniauth_authorize_path(resource_name, provider) %><br />
     <% end -%>
   <% end -%>
-  <span id="signinButton">
-  <span
-    class="g-signin"
-    data-callback="signinCallback"
-    data-clientid="890970036218.apps.googleusercontent.com"
-    data-cookiepolicy="single_host_origin"
-    data-requestvisibleactions="http://schemas.google.com/AddActivity"
-    data-scope="https://www.googleapis.com/auth/plus.login">
-  </span>
 </span>
 </div>
 
