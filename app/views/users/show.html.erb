@@ -24,8 +24,8 @@
     <h1>Containers</h1>
     <p><%= link_to 'New Container', new_user_container_path(@user) %></p>
     <% @user.containers.each do |container| %>
-      <div id="<%= dom_id(container) %>">
-        <table style="border: 2px solid black">
+      <div class="well" id="<%= dom_id(container) %>">
+        <table >
           <thead>
             <tr>
               <th>Name</th>
