@@ -7,7 +7,11 @@
     <li class="<%= 'active' if current_page?(destroy_user_session_path)%>">
       <%= link_to "Sign Out", destroy_user_session_path, method: :delete , class:"nav-link"%>
     </li>
-    <li><% if current_user.present? %><%= link_to current_user.name, edit_user_registration_path(current_user) %> <% end %></li>
+    <% if current_user.email.include? 'twitter'  %>
+      <%= current_user.name %>
+    <% else %>
+      <% current_user.present? %><li><%= link_to current_user.name, edit_user_registration_path(current_user) %></li>
+    <% end %>
   </ul>
 </nav>
 <div class="users-show">
