@@ -1,14 +1,14 @@
 {
   "Unit Tests": {
     "coverage": {
-      "/home/jon/rails/JAB_project/config/environment.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/home/jon/rails/JAB_project/config/application.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/config/application.rb": [
         1,
         null,
         1,
@@ -33,13 +33,13 @@
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/config/boot.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/config/boot.rb": [
         null,
         1,
         null,
         1
       ],
-      "/home/jon/rails/JAB_project/config/environments/test.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/config/environments/test.rb": [
         1,
         null,
         null,
@@ -77,7 +77,7 @@
         1,
         null
       ],
-      "/home/jon/rails/JAB_project/config/initializers/backtrace_silencers.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -86,7 +86,7 @@
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/config/initializers/devise.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/config/initializers/devise.rb": [
         null,
         null,
         1,
@@ -348,13 +348,13 @@
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/config/initializers/filter_parameter_logging.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/config/initializers/filter_parameter_logging.rb": [
         null,
         null,
         null,
         1
       ],
-      "/home/jon/rails/JAB_project/config/initializers/inflections.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -372,14 +372,14 @@
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/config/initializers/mime_types.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/config/initializers/secret_token.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/config/initializers/secret_token.rb": [
         null,
         null,
         null,
@@ -393,12 +393,12 @@
         null,
         1
       ],
-      "/home/jon/rails/JAB_project/config/initializers/session_store.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/config/initializers/session_store.rb": [
         null,
         null,
         1
       ],
-      "/home/jon/rails/JAB_project/config/initializers/wrap_parameters.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -414,7 +414,7 @@
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/config/routes.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/config/routes.rb": [
         1,
         null,
         1,
@@ -489,13 +489,15 @@
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/app/models/user.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/app/models/user.rb": [
         1,
         null,
         null,
         1,
         null,
         1,
+        1,
+        null,
         null,
         1,
         1,
@@ -528,78 +530,64 @@
         0,
         null,
         null,
-        null
-      ],
-      "/home/jon/rails/JAB_project/app/helpers/application_helper.rb": [
-        1,
-        1,
-        108,
         null,
         null,
-        1,
-        18,
         null,
         null,
-        1,
-        54,
-        null,
-        null,
-        1,
-        54,
         null,
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/app/helpers/containers_helper.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/app/helpers/application_helper.rb": [
+        1,
+        1,
+        114,
+        null,
+        null,
+        1,
+        19,
+        null,
+        null,
+        1,
+        57,
+        null,
+        null,
+        1,
+        57,
+        null,
+        null,
+        null
+      ],
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/app/helpers/containers_helper.rb": [
         1,
         null
       ],
-      "/home/jon/rails/JAB_project/app/helpers/links_helper.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/app/helpers/links_helper.rb": [
         1,
         1,
         0,
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/app/helpers/omniauth_callbacks_helper.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/app/helpers/omniauth_callbacks_helper.rb": [
         1,
         null
       ],
-      "/home/jon/rails/JAB_project/app/models/container.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/app/models/container.rb": [
         1,
         1,
-        1,
-        1,
-        1,
-        null
-      ],
-      "/home/jon/rails/JAB_project/app/models/link.rb": [
         1,
         1,
         1,
         null
       ],
-      "/home/jon/rails/JAB_project/test/features/containers/delete_container_test.rb": [
-        1,
-        null,
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/app/models/link.rb": [
         1,
         1,
-        null,
         1,
-        null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
         null
       ],
-      "/home/jon/rails/JAB_project/test/features/containers/edit_container_test.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/test/features/containers/delete_container_test.rb": [
         1,
         null,
         1,
@@ -612,71 +600,6 @@
         null,
         null,
         1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/home/jon/rails/JAB_project/test/features/links/add_link_test.rb": [
-        1,
-        null,
-        1,
-        null,
-        null,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
         null,
         null,
         1,
@@ -684,7 +607,90 @@
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/test/features/links/delete_link_test.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/test/features/containers/edit_container_test.rb": [
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/test/features/links/add_link_test.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        null,
+        null,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/test/features/links/delete_link_test.rb": [
         1,
         null,
         1,
@@ -724,7 +730,7 @@
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/test/features/links/edit_link_test.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/test/features/links/edit_link_test.rb": [
         1,
         null,
         1,
@@ -750,7 +756,7 @@
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/test/features/links/move_link_test.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/test/features/links/move_link_test.rb": [
         1,
         null,
         1,
@@ -797,7 +803,7 @@
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/test/features/user/sign_in_test.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/test/features/user/sign_in_test.rb": [
         1,
         null,
         1,
@@ -825,7 +831,7 @@
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/test/features/user/sign_out_test.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/test/features/user/sign_out_test.rb": [
         1,
         null,
         1,
@@ -836,7 +842,7 @@
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/test/features/user/sign_up_test.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/test/features/user/sign_up_test.rb": [
         1,
         null,
         1,
@@ -857,11 +863,10 @@
         1,
         1,
         1,
-        null,
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/test/features/user/twitter_sign_in_test.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/test/features/user/twitter_sign_in_test.rb": [
         1,
         null,
         1,
@@ -880,41 +885,40 @@
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/app/controllers/welcome_controller.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/app/controllers/welcome_controller.rb": [
         1,
+        1,
+        20,
+        null,
+        null
+      ],
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/app/controllers/application_controller.rb": [
+        1,
+        null,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        16,
+        null,
+        null,
+        1,
+        null,
         1,
         19,
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/app/controllers/application_controller.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/app/controllers/users_controller.rb": [
         1,
-        null,
         1,
-        null,
-        null,
-        1,
-        null,
-        1,
-        15,
-        null,
-        null,
-        1,
-        null,
-        1,
-        18,
+        17,
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/app/controllers/users_controller.rb": [
-        1,
-        1,
-        16,
-        null,
-        null,
-        null
-      ],
-      "/home/jon/rails/JAB_project/app/controllers/containers_controller.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/app/controllers/containers_controller.rb": [
         1,
         null,
         1,
@@ -998,7 +1002,7 @@
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/app/controllers/links_controller.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/app/controllers/links_controller.rb": [
         1,
         1,
         1,
@@ -1069,7 +1073,7 @@
         null,
         null
       ],
-      "/home/jon/rails/JAB_project/app/controllers/omniauth_callbacks_controller.rb": [
+      "/Users/briandavis/Development/code_fellows/Group_Project/LinkSensei/app/controllers/omniauth_callbacks_controller.rb": [
         1,
         1,
         1,
@@ -1085,6 +1089,6 @@
         null
       ]
     },
-    "timestamp": 1383100761
+    "timestamp": 1383169288
   }
 }
