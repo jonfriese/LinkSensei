@@ -19,5 +19,4 @@ feature "A user can sign up" do
     page.text.must_include "prohibited"
     page.text.must_include "Sign up"
   end
-
 end
