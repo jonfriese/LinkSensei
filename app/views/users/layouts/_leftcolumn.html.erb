@@ -4,5 +4,12 @@
     <span class="input-group-btn custombtn">
       <button class="btn btn-default custombtn" type="button"><span class="glyphicon glyphicon-search"></span></button>
     </span>
+
+
   </div><!-- /input-group -->
+<div>
+<% @staging.links.each do |c| %>
+  <%= c.name %>
+<% end %>
+</div>
 
