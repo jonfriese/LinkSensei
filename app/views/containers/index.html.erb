@@ -14,9 +14,9 @@
       <tr id="<%= dom_id(container) %>">
         <td><%= container.name %></td>
         <td><%= container.description %></td>
-        <td><%= link_to 'Show', user_container_path(@user, container) %>
-        <%= link_to 'Edit', edit_user_container_path(@user, container) %>
-        <%= link_to 'Destroy', [@user, container], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', user_container_path(@user, container) %> |
+        <%= link_to 'Edit', edit_user_container_path(@user, container) %> |
+        <%= link_to 'Destroy', [@user, container], method: :delete, data: { confirm: 'Are you sure?' } %> | <%= link_to 'Links', container_links_path(container) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,5 @@
 
 <br>
 
-<%= link_to 'New Container', new_user_container_path(@user, @container) %>
+<%= link_to 'New Container', new_user_container_path(@user, @container) %> |
+<%= link_to 'Home', user_path(current_user) %>
