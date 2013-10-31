@@ -11,23 +11,6 @@ feature "As a site user, I want to add a container, so that I can store links" d
     create_container
   end
 
-  scenario "User creates a new container, and pre-populates with links" do
-    skip
-#     #Given a signed-in user
-#     sign_in
-
-#     #When the user clicks the add container button in the main window
-#     click_on "Add Container"
-
-#     #Then a modal window form should appear, and is filled in
-#     fill_in "Title", with: containers(:container_one).title
-#     check links(:link_two).title
-#     click_on "Create Container"
-
-#     #Then the resulting page should show the new container in the main window
-#     page.should have_content(containers(:container_one).title)
-#     find(containers(:container_one).title).should have_content(links(:link_two).title)
-  end
 
   #unhappy paths
   scenario "User creates a new container, and forgets the title" do
