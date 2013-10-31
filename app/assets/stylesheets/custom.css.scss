@@ -21,6 +21,7 @@ body  {
 }
 
 a  {
+  color: #004e67;
   &:hover  {
   background-color: none;
   }
@@ -50,5 +51,8 @@ a  {
   right: 0
 }
 
+table {
+  width: 100%;
+}
 
 
