@@ -4,12 +4,15 @@
       <thead>
         <tr>
           <th colspan="4"><%= container.name %>
-            <% if on_my_page? %>
-              <%= link_to '', [@user, container], method: :delete, data: { confirm: 'Are you sure?' }, class:"glyphicon glyphicon-trash container-icon" %>
-              <%= link_to '', edit_user_container_path(@user, container), class: "glyphicon glyphicon-edit container-icon" %>
-              <a class="info-pop" href="#" data-toggle="popover" data-placement="right" data-content="<%= container.description %>" data-original-title="Description"><span class="glyphicon glyphicon-info-sign"></span></a>
-              <%= link_to '', user_container_path(@user, container), class:'glyphicon glyphicon-new-window container-icon' %>
-           <% end %>
+
+          <% if on_my_page? %>
+           <%= link_to '', [@user, container], method: :delete, data: { confirm: 'Are you sure?' }, class:"glyphicon glyphicon-trash container-icon" %>
+           <%= link_to '', edit_user_container_path(@user, container), class: "glyphicon glyphicon-edit container-icon" %>
+           <a class="info-pop" href="#" data-toggle="popover" data-placement="right" data-content="<%= container.description %>" data-original-title="Description"><span class="glyphicon glyphicon-info-sign"></span></a>
+            <%= link_to '', new_container_link_path(container), class:'glyphicon glyphicon-plus' %>
+           <%= link_to '', user_container_path(@user, container), class:'glyphicon glyphicon-new-window container-icon' %>
+          <% end %>
+
           </th>
         </tr>
       </thead>
