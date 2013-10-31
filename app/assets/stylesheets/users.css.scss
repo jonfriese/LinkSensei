@@ -7,9 +7,12 @@
 
 }
 
-.cont-well  {
+.content-well  {
   height: 200px !important;
   overflow-y: scroll;
+    div:nth-child(odd)  {
+      margin-left: 100px;
+  }
 }
 
 .logo {
@@ -67,4 +70,5 @@
 .staging-left tr:nth-child(2n+1){
   background-color: white;
 }
+
 
