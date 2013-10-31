@@ -42,15 +42,13 @@ class ActiveSupport::TestCase
     # #Then the resulting page should show the new container in the index
     page.has_content? "A container"
     page.has_content? "A description"
-    page.has_content? "Show"
-    page.has_content? "Edit"
-    page.has_content? "Destroy"
+
   end
 
   def create_link
     #Then a modal window form should appear, and is filled in
-    click_on "Show"
-    click_on "Add Link"
+    page.find("#show").click
+    page.find("#add_link").click
     fill_in "Url", with: "www.google.com"
     fill_in "Name", with: "Google"
     fill_in "Description", with: "a search engine"

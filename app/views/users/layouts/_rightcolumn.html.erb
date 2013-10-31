@@ -4,13 +4,12 @@
       <thead>
         <tr>
           <th colspan="4"><%= container.name %>
-
           <% if on_my_page? %>
-            <%= link_to '', [@user, container], method: :delete, data: { confirm: 'Are you sure?' }, class:"glyphicon glyphicon-trash container-icon" %>
-            <%= link_to '', edit_user_container_path(@user, container), class: "glyphicon glyphicon-edit container-icon" %>
+            <%= link_to '', [@user, container], method: :delete, data: { confirm: 'Are you sure?' }, class:"glyphicon glyphicon-trash container-icon", id:"destroy" %>
+            <%= link_to '', edit_user_container_path(@user, container), class: "glyphicon glyphicon-edit container-icon", id:"edit" %>
             <a class="info-pop" href="#" data-toggle="popover" data-placement="right" data-content="<%= container.description %>" data-original-title="Description"><span class="glyphicon glyphicon-info-sign"></span></a>
-            <%= link_to '', user_container_path(@user, container), class:'glyphicon glyphicon-new-window container-icon' %>
-            <%= link_to '', "#", class:'glyphicon glyphicon-plus container-icon', "data-toggle" => "modal", 'data-target' => "#modal_" + dom_id(container) %>
+            <%= link_to '', user_container_path(@user, container), class:'glyphicon glyphicon-new-window container-icon', id:"show" %>
+            <%= link_to '', "#", class:'glyphicon glyphicon-plus container-icon', id:"add_link", "data-toggle" => "modal", 'data-target' => "#modal_" + dom_id(container) %>
           <% end %>
           </th>
         </tr>
@@ -21,10 +20,11 @@
             <td><%= link_to link.name, url_with_protocol(link.url), :target => '_blank' %></td>
             <td><%= link.description %></td>
             <td colspan='2'>
-              <% if on_my_page? %>
-                <%= link_to '', [container, link], class:"glyphicon glyphicon-trash container-icon", method: :delete, data: { confirm: 'Are you sure?' } %>
-                <%= link_to '', edit_container_link_path(container, link), class:"glyphicon glyphicon-edit container-icon" %>
-              <% end %>
+            <% if on_my_page? %>
+              <%= link_to '', [container, link], class:"glyphicon glyphicon-trash container-icon", id: "destroylink", method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to '', edit_container_link_path(container, link), class:"glyphicon glyphicon-edit container-icon", id: "editlink" %>
+            <% end %>
+>>>>>>> add1e19b569c28ffc38f1363573868dc0240b896
             </td>
           </tr>
         <% end %>

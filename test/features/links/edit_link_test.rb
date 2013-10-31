@@ -11,7 +11,7 @@ feature "As a site user, I want to to edit an existing link so that I can give i
     create_link
 
     #Then the user clicks on a edit icon near the link name
-    click_on "Edit"
+    page.find("#editlink").click
 
     #User makes changes
     fill_in "Name", with: "GOOGLE"

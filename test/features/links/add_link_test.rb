@@ -22,17 +22,19 @@ feature "As a site user, I want to to add a link to my collection so that I use 
     sign_in
 
     #When the user clicks the add link button in the staging area
-    page.find("staging").click_on "Add Link"
 
+    within("//div[@id='custom-well-left']") do
+      find("#stagingnew").click
+    end
+    save_and_open_page
     #Then a form should appear, and is filled in
+    # fill_in "Address", with: "something"
+    # fill_in "Title", with: "something"
+    # fill_in "Description", with: "something"
+    # click_on "Create Link"
 
-    fill_in "Address", with: "something"
-    fill_in "Title", with: "something"
-    fill_in "Description", with: "something"
-    click_on "Create Link"
-
-    #Then the resulting page should show the new link in the chosen container
-    page.find("Staging").should have_content "something"
+    # #Then the resulting page should show the new link in the chosen container
+    # page.find("Staging").should have_content "something"
   end
 
   #unhappy paths
@@ -42,8 +44,8 @@ feature "As a site user, I want to to add a link to my collection so that I use 
     sign_in
     create_container
     #When the user clicks the add link button in a container view
-    click_on "Show"
-    click_on "Add Link"
+    page.find("#show").click
+    page.find('#add_link').click
 
     #Then a modal window form should appear, and is filled in incorrectly
 
