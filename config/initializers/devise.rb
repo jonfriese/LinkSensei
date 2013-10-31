@@ -5,12 +5,7 @@ Devise.setup do |config|
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
 
-  config.secret_key = ENV['DEVISE_SECRET_KEY']
-    if secret.nil? || secret.length < 30
-      puts "Secret token cannot be loaded"
-    else
-      Myapp::Application.config.secret_key_base = secret
-    end
+  config.secret_key = ENV["DEVISE_SECRET_KEY"]
 
 
   # ==> Mailer Configuration
