@@ -12,10 +12,6 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <% if on_my_page? %><td><%= link_to 'Show', user_container_path(@user, container) %> </td>
-          <td> <%= link_to 'Links', container_links_path(container) %></td><% end %>
-        </tr>
         <% container.links.each do |link| %>
           <tr>
             <td><%= link_to link.name, url_with_protocol(link.url), :target => '_blank' %></td>
