@@ -1,6 +1,6 @@
 <% @staging.each do |staging| %>
   <p><span><b>New Container</b></span>
-    <% if on_my_page? %><%= link_to '', new_user_container_path(@user) , class:"glyphicon glyphicon-plus"%><% end %></p>
+    <% if on_my_page? %><%= link_to '', new_user_container_path(@user) , class:"glyphicon glyphicon-plus", id: "new_container"%><% end %></p>
   <p><span><b>New Links</b></span>
     <% if on_my_page? %><%= link_to "", '#', class:"glyphicon glyphicon-plus", id: "stagingnew", "data-toggle" => "modal", 'data-target' => "#modal_" + dom_id(staging) %><% end%></p>
   <hr id="welcome-page-hr">
