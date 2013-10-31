@@ -9,4 +9,8 @@ class ContainerPolicy
   def destroy?
     container.created_by?(user) if user.present?
   end
+
+  def update?
+    container.created_by?(user) if user.present?
+  end
 end

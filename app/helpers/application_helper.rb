@@ -15,4 +15,8 @@ module ApplicationHelper
     @devise_mapping ||= Devise.mappings[:user]
   end
 
+  def on_my_page?
+    page_id = request.path.split('/')[2]
+    page_id.to_s == current_user.id.to_s
+  end
 end

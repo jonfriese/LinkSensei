@@ -44,6 +44,7 @@ class ContainersController < ApplicationController
   # PATCH/PUT /containers/1
   # PATCH/PUT /containers/1.json
   def update
+    authorize @container
     respond_to do |format|
       if @container.update(container_params)
         format.html { redirect_to user_path(@user), notice: 'Container was successfully updated.' }
