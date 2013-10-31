@@ -1,8 +1,0 @@
-container_one:
-  name: Cats
-  description: Cats links
-
-
-container_two:
-  name: Dogs
-  description: Dogs links

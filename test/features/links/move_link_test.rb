@@ -2,22 +2,12 @@ require "test_helper"
 
 feature "As a site user, I want to to move a link from the staging area into a container so that I can find it again more easily" do
   scenario "User moves a new link from the staging area to an existing container" do
-    skip
-    # #Given a signed-in user
+    #Given a signed-in user
     # sign_in
-
-    # #And given an existing link in the staging area
-    # page.has_content links(link_two).title
-    # click_on "Edit Link"
-
-    # #and selects an existing container from the dropdown list
-    # select(containers(:container_one).title, :from => 'Containers')
-    # click_on "Submit Changes"
-
-    # #Then the resulting page should show the moved link in the new container
-    # page.text.must_include "success"
-    # find(containers(:container_one).title).should have_content(links(:link_two).title)
-  end
+    # visit new_user_container_path(@user.id)
+    # save_and_open_page
+    skip
+ end
 
   scenario "User moves a new link from the an existing container to another existing container to correct a misplaced link" do
     skip

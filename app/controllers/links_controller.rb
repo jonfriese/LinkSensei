@@ -1,6 +1,7 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
   before_action :load_container
+  before_filter :find_containers
 
   def index
     @links = @container.links.load
@@ -60,10 +61,14 @@ class LinksController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def link_params
-      params.require(:link).permit(:name, :url, :description)
+      params.require(:link).permit(:name, :url, :description, :container_id)
     end
 
     def load_container
       @container = Container.find(params[:container_id])
     end
+
+  def find_containers
+    @containers_list = Container.all
+  end
 end
