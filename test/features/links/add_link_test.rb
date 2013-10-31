@@ -4,17 +4,18 @@ feature "As a site user, I want to to add a link to my collection so that I use 
 
   #happy paths
   scenario "User creates a new link in an existing container" do
-    #Given a signed-in user
     sign_in
     create_container
-    #When the user clicks the add link button in the staging area
+    page.find("#add_link").click
+       within("//div[@id='modal_container_1']") do
+      fill_in "Url", with: "www.test.com"
+    fill_in "Name", with: "Test"
+    click_on "Create Link"
+    end
 
 
-
-    #Then a modal window form should appear, and is filled in
-    create_link
-
-    # save_and_open_page
+    #Then the resulting page should show the new link in the chosen container
+    page.has_content? "test.com"
   end
 
   scenario "User creates a new link in the staging area" do
@@ -29,9 +30,12 @@ feature "As a site user, I want to to add a link to my collection so that I use 
       find("#stagingnew").click
     end
     # Then a form should appear, and is filled in
-    fill_in "Url", with: "www.test.com"
+    within("//div[@id='modal_container_1']") do
+      fill_in "Url", with: "www.test.com"
     fill_in "Name", with: "Test"
     click_on "Create Link"
+    end
+
 
     #Then the resulting page should show the new link in the chosen container
     page.has_content? "test.com"

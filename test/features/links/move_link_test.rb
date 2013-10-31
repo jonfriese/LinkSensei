@@ -2,45 +2,32 @@ require "test_helper"
 
 feature "As a site user, I want to to move a link from the staging area into a container so that I can find it again more easily" do
   scenario "User moves a new link from the staging area to an existing container" do
-    #Given a signed-in user
-    # sign_in
-    # visit new_user_container_path(@user.id)
-    # save_and_open_page
-    skip
- end
+  sign_in
 
-  scenario "User moves a new link from the an existing container to another existing container to correct a misplaced link" do
-    #Given a signed-in user
-    sign_in
-
-    #And given an existing container
     create_container
-    create_link
 
-    # and a second container
-    page.find("#new_container").click
-    # #Then a modal window form should appear, and is filled in
-    fill_in "Name", with: "second container"
-    fill_in "Description", with: "second description"
-    click_on "Create Container"
+    #When the user clicks the add link button in the staging area
 
-    within("//div[@id='container_1']") do
-      page.find("#editlink").click
+    within("//div[@id='custom-well-left']") do
+      find("#stagingnew").click
     end
-    select('second container', :from => 'link[container_id]')
+    # Then a form should appear, and is filled in
+    within("//div[@id='modal_container_1']") do
+      fill_in "Url", with: "www.test.com"
+    fill_in "Name", with: "Test"
+    click_on "Create Link"
+    end
+    within("//div[@id='custom-well-left']") do
+      find("#staging_edit_link").click
+    end
+    select('A container', :from => 'link[container_id]')
     click_on "Update Link"
+
     within("//div[@id='container_2']") do
-      page.has_content? "a search engine"
+      find("#show").click
     end
-
-    #Then the user clicks on a the container name
-
-
-    #and selects an existing link
-
-    #and selects an existing container from the dropdown list
-
-    #Then the resulting page should show the moved link in the new container
-
-  end
+    page.has_content? "Test"
+    click_on "Home"
+    click_on "Sign Out"
+ end
 end
