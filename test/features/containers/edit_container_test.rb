@@ -9,7 +9,7 @@ feature "As a site user, I want to be able to edit a container, to make updates 
     create_container
 
     # And wants to make an edit
-    click_on "Edit"
+    page.find("#edit").click
     fill_in "Name", with: "A container--edited"
     click_on "Update Container"
     # The container should update with a success message and display the new info
