@@ -29,6 +29,6 @@ feature "A user can sign up" do
       fill_in "Confirm password", with: "test1234"
     end
     click_on "Sign up"
-    page.text.must_include "Staging"
+    page.text.must_include "Home"
   end
 end
