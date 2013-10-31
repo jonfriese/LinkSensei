@@ -1,10 +1,13 @@
 class Container < ActiveRecord::Base
   has_many :links
-  belongs_to :user
+  belongs_to :creator, class_name: "User"
   validates :name, presence: true
-  # validates_uniqueness_of :name
 
   def staging?
     name == "Staging"
+  end
+
+  def created_by?(user)
+    creator == user
   end
 end
