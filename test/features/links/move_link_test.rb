@@ -18,7 +18,7 @@ feature "As a site user, I want to to move a link from the staging area into a c
     create_link
 
     # and a second container
-    click_on "New Container"
+    page.find("#new_container").click
     # #Then a modal window form should appear, and is filled in
     fill_in "Name", with: "second container"
     fill_in "Description", with: "second description"
