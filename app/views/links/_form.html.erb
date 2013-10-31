@@ -29,7 +29,7 @@
 
     <div>
       <%= f.label :container_id %><br />
-      <%= f.collection_select:container_id, @containers_list, :id, :name, prompt: "Select a Container"  %>
+      <%= f.collection_select:container_id, @containers_list, :id, :name %>
     </div>
 
     <div class="actions" style="margin-top: 1em;">
