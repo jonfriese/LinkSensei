@@ -9,9 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-secret = ENV['RAILS_TOKEN']
-if secret.nil? || secret.length < 30
-  puts "Secret token cannot be loaded"
-else
-  Myapp::Application.config.secret_key_base = secret
-end
+JABProject::Application.config.secret_key_base = ENV['RAILS_TOKEN']
