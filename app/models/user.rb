@@ -3,9 +3,13 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :containers
+  has_many :containers, foreign_key: "user_id"
   validates :name, presence: true
   after_create :create_unsorted_container
+
+  def creator?
+    role == 'creator'
+  end
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
