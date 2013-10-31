@@ -22,8 +22,8 @@
             <td><%= link.description %></td>
             <td colspan='2'>
             <% if on_my_page? %>
-              <%= link_to '', edit_container_link_path(@container, link), class:"glyphicon glyphicon-edit container-icon" %>
               <%= link_to '', [@container, link], class:"glyphicon glyphicon-trash container-icon", method: :delete, data: { confirm: 'Are you sure?' } %>
+              <%= link_to '', edit_container_link_path(@container, link), class:"glyphicon glyphicon-edit container-icon" %>
             <% end %>
             </td>
           </tr>
