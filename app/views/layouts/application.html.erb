@@ -1,23 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>LinkSensei</title>
-  <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+  <head>
+    <title>LinkSensei</title>
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
 
-  <%= yield %>
-<script>
-var $btn2 = $('.info-pop');
+    <%= yield %>
 
-$btn2.popover({trigger: 'hover'})
-        .one('click', function() {
-            $btn2.popover('destroy')
-                .popover({ trigger: 'click'})
-                .popover('show');
-        });
-</script>
-</body>
+    <script>
+      var $btn2 = $('.info-pop');
+
+      $btn2.popover({trigger: 'hover'})
+              .one('click', function() {
+                  $btn2.popover('destroy')
+                      .popover({ trigger: 'click'})
+                      .popover('show');
+              });
+    </script>
+  </body>
 </html>

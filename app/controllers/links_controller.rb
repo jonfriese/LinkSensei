@@ -19,7 +19,6 @@ class LinksController < ApplicationController
 
   def create
     @link = @container.links.new(link_params)
-    @link.container_id = @container.id
 
     respond_to do |format|
       if @link.save
