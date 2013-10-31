@@ -1,34 +1,20 @@
-<%= link_to 'Add Link', new_container_link_path(@staging) %>
 <% @staging.each do |staging| %>
-<div>
-  <table class="table">
-    <thead>
-      <tr>
-        <th colspan="4"><%= staging.name %>
-         <a class="info-pop" href="#" data-toggle="popover" data-placement="right" data-content="<%= staging.description %>" data-original-title="Description"><span class="glyphicon glyphicon-info-sign"></span></a>
-       </th>
-     </tr>
-   </thead>
-   <tbody>
-
-    <tr><td><b>Links</b></td><td></td><td></td><td></td></tr>
+  <span><%= staging.name %></span>
+  <%= link_to "", new_container_link_path(@staging), class:"glyphicon glyphicon-plus add-staging" %>
+  <hr id="welcome-page-hr">
+  <table>
+  <% staging.links.each do |link| %>
     <tr>
-      <th>Name</th>
-      <th>URL</th>
-      <th>Description</th>
-      <th>Actions</th>
+      <td colspan="2"><%= link_to link.name, url_with_protocol(link.url), :target => '_blank' %></td>
+      <td><%= link_to '', [staging, link], method: :delete, data: { confirm: 'Are you sure?' },
+                                                        class:"glyphicon glyphicon-trash" %></td>
+      <td><%= link_to '', edit_container_link_path(staging, link), class: "glyphicon glyphicon-edit" %></td>
     </tr>
-    <% staging.links.each do |link| %>
     <tr>
-      <td><%= link.name %></td>
-      <td><%= link_to link.url, url_with_protocol(link.url), :target => '_blank' %></td>
       <td><%= link.description %></td>
-      <td><%= link_to 'Show', container_link_path(staging, link) %>
-        <%= link_to 'Edit', edit_container_link_path(staging, link) %>
-        <%= link_to 'Destroy', [staging, link], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-      <% end %>
-    </tbody>
+    </tr>
+  <% end %>
   </table>
-</div>
+
 <% end %>
+
