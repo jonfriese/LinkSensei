@@ -6,6 +6,10 @@
 
   <% unless current_user.email.include? 'twitter'  %>
 
+    <div>
+      <%= f.label :name %><br />
+    <%= f.text_field :name, :autofocus => true, class:"form-control" %></div>
+
     <div><%= f.label :email %><br />
     <%= f.email_field :email, :autofocus => true, class:"form-control" %></div>
 
