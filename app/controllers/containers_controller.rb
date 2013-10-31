@@ -58,7 +58,9 @@ class ContainersController < ApplicationController
   # DELETE /containers/1
   # DELETE /containers/1.json
   def destroy
+    authorize @container
     @container.destroy
+
     respond_to do |format|
       format.html { redirect_to user_path(@user)}
       format.json { head :no_content }

@@ -27,6 +27,11 @@
       <%= f.text_area(:description, rows: 10, class:"form-control") %>
     </div>
 
+    <div>
+      <%= f.label :container_id %><br />
+      <%= f.collection_select:container_id, @containers_list, :id, :name, prompt: "Select a Container"  %>
+    </div>
+
     <div class="actions" style="margin-top: 1em;">
     <%= f.submit(class: "btn btn-default btn-small custombtn") %>
   </div>

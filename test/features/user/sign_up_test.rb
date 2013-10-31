@@ -30,4 +30,5 @@ feature "A user can sign up" do
     end
     click_on "Sign up"
     page.text.must_include "Staging"
+  end
 end
