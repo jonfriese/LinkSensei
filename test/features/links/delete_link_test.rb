@@ -28,7 +28,7 @@ feature "As a site user, I want to to delete a link I had previously saved, so t
     create_link
 
     #Then the user clicks on a delete icon near the link name
-    click_on "Destroy"
+    page.find("#destroylink").click
 
     #Then the resulting page should not include the link
     page.wont_have_content "Google"

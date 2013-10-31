@@ -9,7 +9,7 @@ feature "As a site user, I want to to delete a container I had previously saved,
     create_container
 
     # The user is redirected to the container index, which lists the container, and clicks on the delete button
-    click_on "Destroy"
+    page.find("#destroy").click
 
     #Then the resulting page should not include the link
     page.wont_have_content "A container"
