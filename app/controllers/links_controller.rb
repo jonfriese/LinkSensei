@@ -68,6 +68,7 @@ class LinksController < ApplicationController
     end
 
   def find_containers
-    @containers_list = Container.all
+    @all_containers = Container.all
+    @containers_list = Container.where(user_id: current_user.id)
   end
 end

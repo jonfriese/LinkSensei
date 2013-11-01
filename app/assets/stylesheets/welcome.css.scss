@@ -1,7 +1,7 @@
 /* Sign In & Sign Up */
 
 .landing-page  {
-  background-color: #67001a !important;
+  background-color: white !important;
   margin-top: -10px;
 }
 
@@ -24,7 +24,7 @@
 
 .brand  {
   font-family: sf_wasabiregular;
-  color: white;
+  color: #67001a;
   margin-top: 0px;
 }
 
@@ -50,4 +50,8 @@
 
 #twitter  {
   margin-bottom: 5px;
+}
+
+#screenshot {
+  width: 400px;
 }
