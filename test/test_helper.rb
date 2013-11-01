@@ -31,8 +31,17 @@ class ActiveSupport::TestCase
 
   def create_container
     #Given a signed-in user
-    # sign_in
-    save_and_open_page
+    click_on "Sign Out"
+
+    within("//div[@id='signup']") do
+      fill_in "Full Name", with: "Test Guy"
+      fill_in "Enter email", with: "tester@example.com"
+      fill_in "Password", with: "test1234"
+      fill_in "Confirm password", with: "test1234"
+    end
+
+    click_on "Sign up"
+    page.text.must_include "Test Guy"
     #When the user clicks the add container button in the main window
     page.find('#new_container"').click
     # #Then a modal window form should appear, and is filled in

@@ -14,11 +14,19 @@ feature "As a site user, I want to add a container, so that I can store links" d
 
   #unhappy paths
   scenario "User creates a new container, and forgets the title" do
-     #Given a signed-in user
-    sign_in
 
+    visit root_path
+
+    within("//div[@id='signup']") do
+      fill_in "Full Name", with: "Test Guy"
+      fill_in "Enter email", with: "tester@example.com"
+      fill_in "Password", with: "test1234"
+      fill_in "Confirm password", with: "test1234"
+    end
+
+    click_on "Sign up"
     #When the user clicks the add container button in the main window
-    click_on "New Container"
+    page.find("#new_container").click
 
     # Then a form should appear, and is filled in incorrectly
     fill_in "Name", with: ""
@@ -27,24 +35,5 @@ feature "As a site user, I want to add a container, so that I can store links" d
     # And an error message is displayed
     page.has_content? "prohibited"
     page.has_content? "Name can't be blank"
-  end
-
-  scenario "User creates a container, and gives it a title that already exists" do
-
-    #Given a signed-in user
-    sign_in
-
-    #When the user clicks the add container button in the main window
-    create_container
-
-    # Then the user calls up a second form and fills it in with the same information
-    click_on "New Container"
-    fill_in "Name", with: "A container"
-    fill_in "Description", with: "A description"
-    click_on "Create Container"
-
-    # Then there should be an error message for uniqueness validation
-    page.has_content? "prohibited"
-    page.has_content? "Name has already been taken"
   end
 end
