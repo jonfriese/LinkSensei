@@ -10,10 +10,12 @@ feature "As a site user, I want to be able to edit a container, to make updates 
 
     # And wants to make an edit
     page.find("#edit").click
-    fill_in "Name", with: "A container--edited"
-    click_on "Update Container"
+
+    within("//div[@id='modal_edit_container_2']") do
+        fill_in "Name", with: "A container--edited"
+        click_on "Update Container"
+    end
     # The container should update with a success message and display the new info
-    page.has_content? "Container was successfully updated."
     page.has_content? "A container--edited"
   end
 end
