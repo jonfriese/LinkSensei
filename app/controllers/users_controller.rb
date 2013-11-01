@@ -5,6 +5,4 @@ class UsersController < ApplicationController
     @staging = @user.containers.select{|c| c.staging?}
     @link = Link.new
   end
-
-
 end

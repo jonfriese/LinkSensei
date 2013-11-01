@@ -44,6 +44,6 @@ class User < ActiveRecord::Base
   end
 
   def create_unsorted_container
-    containers.create!(name: "Staging")
+    containers.create!(name: "Staging", link: "fc1e8c208ae63daf22f7659")
   end
 end
