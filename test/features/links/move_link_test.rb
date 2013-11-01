@@ -12,7 +12,7 @@ feature "As a site user, I want to to move a link from the staging area into a c
       find("#stagingnew").click
     end
     # Then a form should appear, and is filled in
-    within("//div[@id='modal_container_1']") do
+    within("//div[@id='modal_link_container_1']") do
       fill_in "Url", with: "www.test.com"
     fill_in "Name", with: "Test"
     click_on "Create Link"

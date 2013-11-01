@@ -43,7 +43,7 @@ class ActiveSupport::TestCase
     click_on "Sign up"
     page.text.must_include "Test Guy"
     #When the user clicks the add container button in the main window
-    page.find('#new_container"').click
+    page.find('#new_container').click
     # #Then a modal window form should appear, and is filled in
     fill_in "Name", with: "A container"
     fill_in "Description", with: "A description"

@@ -7,7 +7,7 @@ feature "As a site user, I want to to add a link to my collection so that I use 
     sign_in
     create_container
     page.find("#add_link").click
-       within("//div[@id='modal_container_1']") do
+       within("//div[@id='modal_link_container_1']") do
       fill_in "Url", with: "www.test.com"
     fill_in "Name", with: "Test"
     click_on "Create Link"
@@ -30,7 +30,7 @@ feature "As a site user, I want to to add a link to my collection so that I use 
       find("#stagingnew").click
     end
     # Then a form should appear, and is filled in
-    within("//div[@id='modal_container_1']") do
+    within("//div[@id='modal_link_container_1']") do
       fill_in "Url", with: "www.test.com"
     fill_in "Name", with: "Test"
     click_on "Create Link"
