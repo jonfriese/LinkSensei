@@ -14,7 +14,7 @@
       <img src="./assets/0.7.1/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2013-11-01T11:54:43-07:00">2013-11-01T11:54:43-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2013-11-01T15:09:34-07:00">2013-11-01T15:09:34-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -153,7 +153,7 @@
       <tr>
         <td class="strong"><a href="#ee508edc5acb473bc9cd6ca27616d8132378b6ba" class="src_link" title="app/models/container.rb">app/models/container.rb</a></td>
         <td class="yellow strong">87.5 %</td>
-        <td>13</td>
+        <td>14</td>
         <td>8</td>
         <td>7</td>
         <td>1</td>
@@ -2102,61 +2102,67 @@
           <code class="ruby">  belongs_to :creator, class_name: &quot;User&quot;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="4">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="4">
           
-          <code class="ruby">  validates :name, presence: true</code>
+          
+          <code class="ruby">  # validates :name, presence: true</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates :name, length: { in: 4..20 }</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
           <code class="ruby">  def staging?</code>
         </li>
       
-        <li class="covered" data-hits="118" data-linenumber="7">
+        <li class="covered" data-hits="118" data-linenumber="8">
           <span class="hits">118</span>
           
-          <code class="ruby">    name == &quot;735926a9f802a4c004cee5901fca281923d63f4fcfe99393c6016c029d01c35b50336bffcae81d7443a681dd83c802d5c63fefc05eb9e272d3abf4af6dc65290&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
-          
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    link == &quot;fc1e8c208ae63daf22f7659&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
           <code class="ruby">  def created_by?(user)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="11">
+        <li class="missed" data-hits="0" data-linenumber="12">
           
           
           <code class="ruby">    creator == user</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">end</code>
@@ -2513,7 +2519,7 @@
         <li class="covered" data-hits="14" data-linenumber="47">
           <span class="hits">14</span>
           
-          <code class="ruby">    containers.create!(name: &quot;735926a9f802a4c004cee5901fca281923d63f4fcfe99393c6016c029d01c35b50336bffcae81d7443a681dd83c802d5c63fefc05eb9e272d3abf4af6dc65290&quot;)</code>
+          <code class="ruby">    containers.create!(name: &quot;Staging&quot;, link: &quot;fc1e8c208ae63daf22f7659&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="48">
