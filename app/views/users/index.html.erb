@@ -1,0 +1,10 @@
+<div class="well" style="margin: 1em">
+<h2>Listing Users</h2>
+
+<% @users.each do |user| %>
+<p><%= link_to "#{user.name}", user %></p>
+<% end %>
+
+<br>
+<%= link_to 'Home', user_path(current_user) %>
+</div>

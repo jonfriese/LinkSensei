@@ -5,4 +5,7 @@ class UsersController < ApplicationController
     @staging = @user.containers.select{|c| c.staging?}
     @link = Link.new
   end
+  def index
+    @users = User.all
+  end
 end
