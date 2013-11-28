@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :containers, foreign_key: "user_id"
   validates :name, presence: true
+
   after_create :create_unsorted_container
 
   def creator?

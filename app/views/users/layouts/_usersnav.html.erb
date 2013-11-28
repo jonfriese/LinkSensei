@@ -1,5 +1,6 @@
 <nav class="fixed-nav">
   <li class="logo"><%= link_to "Link Sensei", root_path, class:"navbar-brand" %></li>
+
   <ul class="links nav">
     <li class="<%= 'active' if current_page?(root_path)%>">
       <%= link_to "Home", root_path, class:"nav-link" %>
@@ -7,6 +8,17 @@
     <li class="<%= 'active' if current_page?(destroy_user_session_path)%>">
       <%= link_to "Sign Out", destroy_user_session_path, method: :delete , class:"nav-link"%>
     </li>
-    <li><% if current_user.present? %><%= link_to current_user.name, edit_user_registration_path(current_user) %> <% end %></li>
+
+    <% if current_user.present? %>
+      <li style="color: white">
+        <%= current_user.public_status == true ? "public account" : "private account" %>
+      </li>
+      <li>
+        <%= link_to current_user.name, edit_user_registration_path(current_user) %>
+      </li>
+      <li>
+        <%= link_to "Browse Users", users_path, class:"nav-link" %>
+      </li>
+    <% end %>
   </ul>
 </nav>

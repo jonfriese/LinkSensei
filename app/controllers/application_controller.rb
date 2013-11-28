@@ -19,6 +19,7 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters_update
     devise_parameter_sanitizer.for(:account_update) << :name
+    devise_parameter_sanitizer.for(:account_update) << :public_status
   end
 
   private

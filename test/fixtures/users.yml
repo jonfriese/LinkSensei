@@ -10,3 +10,8 @@ user:
   email: test@example.com
   encrypted_password: <%= User.new.send(:password_digest, 'password') %>
 
+public_user:
+  name: Public Test User
+  email: user1@example.com
+  encrypted_password: <%= User.new.send(:password_digest, 'password') %>
+  public_status: true

@@ -29,6 +29,16 @@ class ActiveSupport::TestCase
     click_on "Sign in"
   end
 
+  def sign_in_as_public_user
+    visit '/'
+    within("//div[@id='signin']") do
+      fill_in "user[email]", with: users(:public_user).email
+      fill_in "Password", with: "password"
+    end
+
+    click_on "Sign in"
+  end
+
   def create_container
     #Given a signed-in user
     click_on "Sign Out"
