@@ -1,9 +1,13 @@
 <%= render 'users/layouts/usersnav' %>
 
 <div class="users-show">
-  <div class="col-sm-3 col-md-3 col-lg-3" id="custom-well-left">
-    <%= render 'users/layouts/leftcolumn' %>
-  </div>
+  <% if @user == current_user %>
+    <div class="col-sm-3 col-md-3 col-lg-3" id="custom-well-left">
+      <%= render 'users/layouts/leftcolumn' %>
+    </div>
+  <% end %>
+</div>
+
   <div class="col-lg-9">
     <%= render 'users/layouts/rightcolumn' %>
   </div>

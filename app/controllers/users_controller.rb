@@ -8,20 +8,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    # @users = User.all
     @users = User.where(:public_status => true)
   end
-
-#   def update
-#     @user = User.find(params[:id])
-#     @user.update_attributes!(user_params)
-#     redirect_to @user
-#   end
-
-# private
-#   def user_params
-#     params.require(:user).permit(:public_status)
-#   end
 end
 
 
