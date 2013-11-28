@@ -1,5 +1,9 @@
 <nav class="fixed-nav">
-  <li class="logo"><%= link_to "Link Sensei", root_path, class:"navbar-brand" %></li>
+  <ul>
+    <li class="logo">
+      <%= link_to "Link Sensei", root_path, class:"navbar-brand" %>
+    </li>
+  </ul>
 
   <ul class="links nav">
     <li class="<%= 'active' if current_page?(root_path)%>">
@@ -19,6 +23,12 @@
       <li>
         <%= link_to "Browse Users", users_path, class:"nav-link" %>
       </li>
+      <% unless @user == current_user %>
+        <li style="color: white">
+          viewing user <%= @user.name %>
+        </li>
+      <% end %>
+
     <% end %>
   </ul>
 </nav>
