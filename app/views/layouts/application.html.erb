@@ -11,14 +11,7 @@
     <%= yield %>
 
     <script>
-      var $btn2 = $('.info-pop');
-
-      $btn2.popover({trigger: 'hover'})
-              .one('click', function() {
-                  $btn2.popover('destroy')
-                      .popover({ trigger: 'click'})
-                      .popover('show');
-              });
+      $('.info-pop').popover({trigger: 'hover'});
     </script>
   </body>
 </html>
