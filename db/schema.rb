@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131127041627) do
+ActiveRecord::Schema.define(version: 20131129002130) do
 
   create_table "containers", force: true do |t|
     t.integer  "user_id"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20131127041627) do
     t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "starred"
   end
 
   create_table "links", force: true do |t|
