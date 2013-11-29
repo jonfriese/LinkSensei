@@ -47,4 +47,15 @@ class User < ActiveRecord::Base
   def create_unsorted_container
     containers.create!(name: "Staging", link: "fc1e8c208ae63daf22f7659")
   end
+
+  def self.search(search)
+    if search
+      search.strip
+      # find(:all, :conditions => ['name like ?', "%#{search}%"])
+      all(:conditions => ['name like ?', "%#{search}%"])
+      where("name like ?", "%#{search}%")
+    else
+      all
+    end
+  end
 end

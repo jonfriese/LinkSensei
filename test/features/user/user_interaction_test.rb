@@ -6,8 +6,7 @@ feature "A user can view other public users" do
     sign_in
     click_on "Browse Users"
     page.text.must_include "#{users(:public_user).name}"
-    click_on "Home"
-    click_on "Sign Out"
+    sign_out
   end
 
   scenario "Users can visit pages of other public users, but will not see other users' staging areas" do
@@ -22,5 +21,19 @@ feature "A user can view other public users" do
     page.has_css? "custom-well-left"
     click_on "Sign Out"
   end
+
+  scenario "Public users can be searched" do
+    sign_in
+    click_on "Browse Users"
+    page.text.must_include "#{users(:public_user).name}"
+    page.text.must_include "#{users(:public_user2).name}"
+    fill_in('search', :with => "#{users(:public_user2).name}")
+    click_on "Search users"
+    page.text.wont_include "#{users(:public_user).name}"
+    page.text.must_include "#{users(:public_user2).name}"
+    page.text.wont_include "#{users(:user).name}"
+    sign_out
+  end
+
 end
 

@@ -8,7 +8,8 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.where(:public_status => true)
+    @users = User.where(:public_status => true).order(created_at: :desc).paginate(:page => params[:page], :per_page => 50)
+    @users = @users.search(params[:search])
   end
 end
 

@@ -29,6 +29,11 @@ class ActiveSupport::TestCase
     click_on "Sign in"
   end
 
+  def sign_out
+    click_on "Home"
+    click_on "Sign Out"
+  end
+
   def sign_in_as_public_user
     visit '/'
     within("//div[@id='signin']") do
