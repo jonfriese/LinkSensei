@@ -52,8 +52,6 @@ class User < ActiveRecord::Base
   def self.search(search)
     if search
       search.strip
-      # find(:all, :conditions => ['name like ?', "%#{search}%"])
-      all(:conditions => ['name like ?', "%#{search}%"])
       where("name like ?", "%#{search}%")
     else
       all
