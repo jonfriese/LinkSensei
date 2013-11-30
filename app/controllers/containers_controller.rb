@@ -69,7 +69,7 @@ class ContainersController < ApplicationController
   def clone
     @container = Container.find(params[:container_id])
     cloned_container = @container.amoeba_dup
-    cloned_container.save
+    current_user.containers << cloned_container
 
     respond_to do |format|
       if cloned_container.save
