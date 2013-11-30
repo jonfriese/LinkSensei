@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20131129053407) do
   create_table "containers", force: true do |t|
     t.integer  "user_id"
     t.string   "name"
-    t.text     "description",        limit: 255
+    t.text     "description", limit: 255
     t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
