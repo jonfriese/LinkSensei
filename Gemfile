@@ -17,6 +17,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'pundit'
 gem 'will_paginate', '~> 3.0.5'
 gem 'amoeba'
+gem 'public_suffix'
 
 
 group :development, :test do

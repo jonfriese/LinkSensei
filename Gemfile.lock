@@ -120,6 +120,7 @@ GEM
       coderay (~> 1.0)
       method_source (~> 0.8)
       slop (~> 3.4)
+    public_suffix (1.3.2)
     pundit (0.2.1)
       activesupport (>= 3.0.0)
     rack (1.5.2)
@@ -210,6 +211,7 @@ DEPENDENCIES
   omniauth-twitter
   pg
   pry
+  public_suffix
   pundit
   rails (= 4.0.0)
   rails_12factor

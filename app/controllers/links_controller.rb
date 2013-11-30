@@ -19,7 +19,9 @@ class LinksController < ApplicationController
 
   def create
     @link = @container.links.new(link_params)
-
+    if PublicSuffix.valid?(@link.url) != true
+      raise "URL must have a public suffix!"
+    end
     respond_to do |format|
       if @link.save
         @container.links << @link
