@@ -9,10 +9,12 @@ feature "As a site user, I want to to delete a container I had previously saved,
     create_container
 
     # The user is redirected to the container index, which lists the container, and clicks on the delete button
-    page.find("#destroy").click
+    within("//div[@id='container_2']") do
+        find("#destroy").click
+    end
+
 
     #Then the resulting page should not include the link
-    page.wont_have_content "A container"
-    page.wont_have_content "A description"
+    page.has_no_css? "#container_2"
   end
 end

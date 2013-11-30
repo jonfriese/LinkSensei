@@ -1,7 +1,10 @@
 @import "twitter/bootstrap";
 
 body  {
-
+  margin-top: -10px;
+}
+.users-show  {
+  margin-top: 1em;
 }
 
 @font-face {
@@ -16,8 +19,17 @@ body  {
 
 }
 
+.popover {
+  overflow: auto;
+}
+
 .alert {
   color: black;
+}
+
+.notice  {
+  margin-top: 10px;
+  margin-left: 10px;
 }
 
 a  {
@@ -41,8 +53,60 @@ a  {
 }
 
 #my_form {
-  height: 40em;
+  height: 43em;
   width: 40em;
+  overflow: auto;
+  margin:auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0
+}
+
+#new_container_form {
+  height: 22em;
+  width: 40em;
+  overflow: auto;
+  margin:auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0
+}
+
+#edit_user_form {
+  /*display: block;*/
+  height: 45em;
+  width: 40em;
+  overflow: auto;
+  margin:auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0
+}
+
+#sign_in_form {
+  /*display: block;*/
+  height: 21em;
+  width: 40em;
+  overflow: auto;
+  margin:auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0
+}
+
+#sign_up_form {
+  /*display: block;*/
+  height: 35em;
+  width: 40em;
+  overflow: auto;
   margin:auto;
   position: absolute;
   top: 0;
@@ -58,7 +122,3 @@ table {
 body.modal-open, .modal-open .navbar-fixed-top, .modal-open .navbar-fixed-bottom  {
   margin-right: 0px;
 }
-
-
-
-

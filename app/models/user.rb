@@ -46,5 +46,15 @@ class User < ActiveRecord::Base
 
   def create_unsorted_container
     containers.create!(name: "Staging", link: "fc1e8c208ae63daf22f7659")
+    containers.create!(name: "Start here!", description: "This is a container.  Use the + tool to create a link within the container.")
+  end
+
+  def self.search(search)
+    if search
+      search.strip
+      where("name like ?", "%#{search}%")
+    else
+      all
+    end
   end
 end

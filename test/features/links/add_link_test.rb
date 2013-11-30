@@ -6,7 +6,7 @@ feature "As a site user, I want to to add a link to my collection so that I use 
   scenario "User creates a new link in an existing container" do
     sign_in
     create_container
-    page.find("#add_link").click
+    # page.find("#add_link").click
        within("//div[@id='modal_link_container_1']") do
       fill_in "Url", with: "www.test.com"
     fill_in "Name", with: "Test"
@@ -48,15 +48,16 @@ feature "As a site user, I want to to add a link to my collection so that I use 
     sign_in
     create_container
     #When the user clicks the add link button in a container view
-    page.find("#show").click
-    page.find('#add_link').click
+    # page.find("#show").click
+    # page.find('#add_link').click
 
     #Then a modal window form should appear, and is filled in incorrectly
-
+    within("//div[@id='modal_link_container_1']") do
     fill_in "Url", with: ""
     fill_in "Name", with: ""
     fill_in "Description", with: ""
     click_on "Create Link"
+    end
 
     # save_and_open_page
     # #Then the resulting page should show the new link in the staging area

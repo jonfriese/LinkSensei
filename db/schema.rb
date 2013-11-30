@@ -11,7 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20131129053407) do
+
 
   create_table "containers", force: true do |t|
     t.integer  "user_id"
@@ -21,6 +23,7 @@ ActiveRecord::Schema.define(version: 20131129053407) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "original_user_name"
+    t.boolean  "starred"
   end
 
   create_table "links", force: true do |t|

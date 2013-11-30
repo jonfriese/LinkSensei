@@ -29,6 +29,11 @@ class ActiveSupport::TestCase
     click_on "Sign in"
   end
 
+  def sign_out
+    click_on "Home"
+    click_on "Sign Out"
+  end
+
   def sign_in_as_public_user
     visit '/'
     within("//div[@id='signin']") do
@@ -67,7 +72,10 @@ class ActiveSupport::TestCase
 
   def create_link
     #Then a modal window form should appear, and is filled in
-    page.find("#show").click
+    within("//div[@id='container_2']") do
+        find("#show").click
+    end
+
     page.find("#add_link").click
     fill_in "Url", with: "www.google.com"
     fill_in "Name", with: "Google"
