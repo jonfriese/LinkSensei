@@ -11,4 +11,8 @@ class Container < ActiveRecord::Base
   def created_by?(user)
     creator == user
   end
+
+  amoeba do
+    enable
+  end
 end

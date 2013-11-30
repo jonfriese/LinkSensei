@@ -66,6 +66,23 @@ class ContainersController < ApplicationController
     end
   end
 
+  def clone
+    @container = Container.find(params[:container_id])
+    cloned_container = @container.amoeba_dup
+    cloned_container.save
+
+    respond_to do |format|
+      if cloned_container.save
+        format.html { redirect_to user_path(@user), notice: 'Container was successfully created.' }
+        format.json { render action: 'show', status: :created, location: cloned_container }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: cloned_container.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_container

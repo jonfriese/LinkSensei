@@ -6,7 +6,9 @@ JABProject::Application.routes.draw do
   devise_for :users, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
   resources :users do
-    resources :containers
+    resources :containers do
+      post '/clone', to: 'containers#clone'
+    end
   end
 
   resources :containers do
