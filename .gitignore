@@ -17,5 +17,10 @@ git a# See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # Ignore application configuration
 /config/application.yml
+
 .DS_Store
 /coverage
+
+
+/coverage/*.*
+>>>>>>> master

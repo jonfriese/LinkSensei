@@ -6,7 +6,6 @@
   </ul>
 
   <ul class="links nav">
-
     <li class="<%= 'active' if current_page?(destroy_user_session_path)%>">
       <%= link_to "Sign Out", destroy_user_session_path, method: :delete , class:"nav-link"%>
     </li>
@@ -25,8 +24,12 @@
         <li style="color: white">
           viewing user <%= @user.name %>
         </li>
+        <li>
+          <a>
+            <%= link_to 'Home', current_user, class:"nav-link" %>
+          </a>
+        </li>
       <% end %>
-
     <% end %>
   </ul>
 </nav>

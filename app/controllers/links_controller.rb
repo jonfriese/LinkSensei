@@ -1,7 +1,7 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
   before_action :load_container
-  before_filter :find_containers
+  before_action :find_containers
 
   def index
     @links = @container.links.load
