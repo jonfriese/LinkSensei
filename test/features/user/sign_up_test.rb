@@ -29,7 +29,7 @@ feature "A user can sign up" do
       fill_in "Confirm password", with: "test1234"
     end
     click_on "Sign up"
-    page.text.must_include "Home"
+    page.must_have_content "Test Guy"
     page.has_css? "custom-well-left"
     page.text.must_include "Start here!"
   end

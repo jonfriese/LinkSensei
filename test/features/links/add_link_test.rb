@@ -64,4 +64,17 @@ feature "As a site user, I want to to add a link to my collection so that I use 
     page.has_content? "prohibited"
     page.has_content? "Url can't be blank"
   end
+
+  scenario "User creates a link with an invalid TLD" do
+        # Given a signed-in user
+    sign_in
+    create_container
+    within("//div[@id='modal_link_container_1']") do
+    fill_in "Url", with: "www.google.con"
+    fill_in "Name", with: "google"
+    fill_in "Description", with: "search"
+    click_on "Create Link"
+    end
+    page.text.must_include "Url URL must have a public suffix"
+  end
 end

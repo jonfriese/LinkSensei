@@ -8,7 +8,8 @@ feature "A user can sign in" do
 
   scenario "A user gets redirected to their profile page after signing in" do
   	sign_in
-  	page.must_have_link("Home")
+  	page.must_have_content users(:user).name
+    page.must_have_content "Browse Users"
   end
 
   scenario "A user gives invalid data" do
@@ -21,6 +22,6 @@ feature "A user can sign in" do
   scenario "user visits home page while signed in" do
     sign_in
     visit root_path
-    page.must_have_content "Home"
+    page.must_have_content users(:user).name
   end
 end
