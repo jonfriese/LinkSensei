@@ -1,7 +1,7 @@
 class LinksController < ApplicationController
   before_action :set_link, only: [:show, :edit, :update, :destroy]
   before_action :load_container
-  before_filter :find_containers
+  before_action :find_containers
 
   def index
     @links = @container.links.load
@@ -19,9 +19,7 @@ class LinksController < ApplicationController
 
   def create
     @link = @container.links.new(link_params)
-    if PublicSuffix.valid?(@link.url) != true
-      raise "URL must have a public suffix!"
-    end
+
     respond_to do |format|
       if @link.save
         @container.links << @link
