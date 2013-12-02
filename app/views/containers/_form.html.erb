@@ -13,6 +13,11 @@
 
 
   <div class="form-group">
+    <div class="field">
+      <%= f.label :starred %>
+      <%= f.check_box :starred %>
+    </div>
+
   <div class="field">
     <% f.hidden_field :user_id %>
     <%= f.label :name %><br />

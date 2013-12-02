@@ -91,4 +91,29 @@ class ActiveSupport::TestCase
     page.has_content? "Destroy"
   end
 
+  def create_starred_container
+    # Given a new user
+    visit root_path
+    within("//div[@id='signup']") do
+      fill_in "Full Name", with: "Test Guy"
+      fill_in "Enter email", with: "tester@example.com"
+      fill_in "Password", with: "test1234"
+      fill_in "Confirm password", with: "test1234"
+    end
+
+    click_on "Sign up"
+    page.text.must_include "Test Guy"
+
+    # no containers are starred by default
+    page.text.wont_include "★"
+
+    # and the user updates the default container to be starred
+    click_on "edit_container_2"
+    check "Starred"
+    click_on "Update Container"
+
+    # the star will appear on the main view
+    page.text.must_include "★"
+  end
+
 end
