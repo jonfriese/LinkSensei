@@ -27,7 +27,7 @@ feature "As a site user, I want to to move a link from the staging area into a c
       find("#show").click
     end
     page.has_content? "Test"
-    click_on "Home"
+    click_on "Back"
     click_on "Sign Out"
  end
 end
