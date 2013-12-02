@@ -22,6 +22,7 @@ class ContainersController < ApplicationController
   def create
     @container = @user.containers.new(container_params)
     @container.user_id = @user.id
+    @container.original_user_name = @user.name
 
     respond_to do |format|
       if @container.save
@@ -65,6 +66,7 @@ class ContainersController < ApplicationController
     @container = Container.find(params[:container_id])
     cloned_container = @container.amoeba_dup
     current_user.containers << cloned_container
+    cloned_container.description += " Created by: #{@container.original_user_name}"
 
     respond_to do |format|
       if cloned_container.save
@@ -86,7 +88,7 @@ class ContainersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def container_params
-      params.require(:container).permit(:name, :description, :starred)
+      params.require(:container).permit(:name, :description, :starred, :creator)
     end
 
     def load_user
