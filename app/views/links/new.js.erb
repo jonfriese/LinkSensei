@@ -1,2 +1,7 @@
-$("#stagingnew").addClass("active-add").after("<%=j render("form") %>");
+$("#stagingnew").hide().after("<%=j render("form") %>");
+$("#link-back").on('click', function() {
+    $("#link-back").remove();
+    $("#new_link").remove();
+    $("#stagingnew").fadeIn('default');
+});
 

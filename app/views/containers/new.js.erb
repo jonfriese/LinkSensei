@@ -1,6 +1,6 @@
 $("#new_container_plus").hide().after("<%=j render("form") %>");
-$(".back-link").on('click', function() {
-    $(".back-link").remove();
+$("#container-back").on('click', function() {
+    $("#container-back").remove();
     $("#new_container").remove();
-    $("#new_container_plus").fadeIn(.500);
+    $("#new_container_plus").fadeIn('default');
 });
