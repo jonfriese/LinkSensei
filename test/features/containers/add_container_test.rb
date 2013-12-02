@@ -26,7 +26,7 @@ feature "As a site user, I want to add a container, so that I can store links" d
 
     click_on "Sign up"
     #When the user clicks the add container button in the main window
-    page.find("#new_container").click
+    page.find("#new_container_plus").click
 
     # Then a form should appear, and is filled in incorrectly
     fill_in "Name", with: ""
