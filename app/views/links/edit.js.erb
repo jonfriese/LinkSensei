@@ -1,6 +1,9 @@
-$("#link_edit").hide().after("<%=j render("form") %>");
+// alert("hello");
+$("#new_link_label").html("Edit Link")
+$("#stagingnew").hide().after("<%=j render("form") %>");
 $("#link-back").on('click', function() {
     $("#link-back").remove();
     $(".edit_link").remove();
-    $("#link_edit").fadeIn('default');
+    $("#stagingnew").fadeIn('default');
+    $("#new_link_label").html("New Link")
 });
