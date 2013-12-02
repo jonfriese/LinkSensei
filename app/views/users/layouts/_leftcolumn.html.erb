@@ -2,14 +2,14 @@
   <p>
     <b>New Container</b>
     <% if on_my_page? %>
-      <%= link_to '', new_user_container_path(@user) , class:"glyphicon glyphicon-plus", id: "new_container", remote: true %>
+      <%= link_to '', new_user_container_path(@user) , class:"glyphicon glyphicon-plus", id: "new_container_plus", remote: true %>
     <% end %>
   </p>
 
   <p>
-    <b>New Links</b>
+    <b>New Link</b>
     <% if on_my_page? %>
-      <%= link_to "", '#', class:"glyphicon glyphicon-plus", id: "stagingnew", "data-toggle" => "modal", 'data-target' => "#modal_link_" + dom_id(staging) %>
+      <%= link_to "", new_container_link_path(staging), class:"glyphicon glyphicon-plus", id: "stagingnew", remote: true %>
     <% end%>
   </p>
 
@@ -23,7 +23,7 @@
         <%= link_to link.name, url_with_protocol(link.url), :target => '_blank' %>
           <% if on_my_page? %>
             <%= link_to '', [staging, link], method: :delete, data: { confirm: 'Are you sure?' }, class:"glyphicon glyphicon-trash container-icon", id: "staging_trash_link" %>
-            <%= link_to '', edit_container_link_path(staging, link), class: "glyphicon glyphicon-edit container-icon", id: "staging_edit_link" %>
+            <%= link_to '', edit_container_link_path(staging, link), class: "glyphicon glyphicon-edit container-icon", id: "staging_edit_link", remote: true %>
           <% end %>
       </td>
     </tr>
