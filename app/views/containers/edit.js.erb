@@ -1,8 +1,10 @@
-$("#new_container_plus").hide().after("<%=j render("form") %>");
+$("#custom-well-left").children().hide();
+$("#custom-well-left").append("<%=j render("form") %>");
 $("#new_container_label").html("Editing Container: <%=j @container.name %>");
 $("#container-back").on('click', function() {
     $("#container-back").remove();
     $(".edit_container").remove();
     $("#new_container_plus").fadeIn('default');
     $("#new_container_label").html("New Container");
+$("#custom-well-left").children().show();
 });

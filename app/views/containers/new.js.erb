@@ -1,6 +1,8 @@
-$("#new_container_plus").hide().after("<%=j render("form") %>");
+$("#custom-well-left").children().hide();
+$("#custom-well-left").append("<%=j render("form") %>");
 $("#container-back").on('click', function() {
     $("#container-back").remove();
     $("#new_container").remove();
-    $("#new_container_plus").fadeIn('default');
+$("#custom-well-left").children().show();
 });
+

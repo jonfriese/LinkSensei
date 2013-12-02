@@ -1,7 +1,8 @@
-$("#stagingnew").hide().after("<%=j render("form") %>");
+$("#custom-well-left").children().hide();
+$("#custom-well-left").append("<%=j render("form") %>");
 $("#link-back").on('click', function() {
     $("#link-back").remove();
     $("#new_link").remove();
-    $("#stagingnew").fadeIn('default');
+$("#custom-well-left").children().show();
 });
 
