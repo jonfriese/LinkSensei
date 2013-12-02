@@ -3,9 +3,19 @@ require "test_helper"
 feature "A user can change a container starred settings" do
 
   scenario "Container settings default to unstarred" do
-    sign_in
-    save_and_open_page
-    # page.text.wont_include "&#9733;"
+    skip
+    # visit root_path
+    # within("//div[@id='signup']") do
+    #   fill_in "Full Name", with: "Test Guy"
+    #   fill_in "Enter email", with: "tester@example.com"
+    #   fill_in "Password", with: "test1234"
+    #   fill_in "Confirm password", with: "test1234"
+    # end
+
+    # click_on "Sign up"
+    # page.text.must_include "Test Guy"
+    # save_and_open_page
+    # page.text.wont_include "★"
   end
 
   # scenario "User checks box on edit container page" do
