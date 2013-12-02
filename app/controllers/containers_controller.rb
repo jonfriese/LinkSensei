@@ -3,23 +3,17 @@ class ContainersController < ApplicationController
   before_action :set_container, only: [:show, :edit, :update, :destroy]
   before_action :load_user
 
-  # GET /containers
-  # GET /containers.json
   def index
     @containers = @user.containers.load
   end
 
-  # GET /containers/1
-  # GET /containers/1.json
   def show
   end
 
-  # GET /containers/new
   def new
     @container = @user.containers.new
   end
 
-  # GET /containers/1/edit
   def edit
   end
 
