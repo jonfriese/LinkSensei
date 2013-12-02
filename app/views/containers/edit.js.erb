@@ -1,8 +1,8 @@
 $("#new_container_plus").hide().after("<%=j render("form") %>");
 $("#new_container_label").html("Editing Container: <%=j @container.name %>");
-$(".back-link").on('click', function() {
-    $(".back-link").remove();
+$("#container-back").on('click', function() {
+    $("#container-back").remove();
     $(".edit_container").remove();
-    $("#new_container_plus").fadeIn(.500);
+    $("#new_container_plus").fadeIn('default');
     $("#new_container_label").html("New Container");
 });
