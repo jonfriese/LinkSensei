@@ -7,7 +7,7 @@ class Link < ActiveRecord::Base
 
   def public_suffix
     if PublicSuffix.valid?(self.url) != true
-      self.errors.add(:url, "URL must have a public suffix")
+      self.errors.add(:url, "must have a public suffix")
     end
   end
 end
