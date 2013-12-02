@@ -9,7 +9,7 @@
 10.times do |i|
   User.create(name: "user#{i+1}", email: "user#{i}@example.com", password: "password", public_status: true)
   10.times do |j|
-    Container.create(name: "container#{j+1}", user_id: "#{i+1}")
+    Container.create(name: "container#{j+1}", user_id: "#{i+1}", description: "description")
     # 10.times do
     #   Link.create(name: "google", url: "www.google.com", user_id: "#{i}", container_id: "#{j}")
     # end
