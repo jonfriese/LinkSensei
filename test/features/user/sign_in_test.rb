@@ -24,4 +24,10 @@ feature "A user can sign in" do
     visit root_path
     page.must_have_content users(:user).name
   end
+
+  scenario "user homepage paginates" do
+    create_eleven_containers
+    page.must_have_content "Previous"
+    page.must_have_content "Next"
+  end
 end
