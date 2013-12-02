@@ -6,12 +6,10 @@
   </ul>
 
   <ul class="links nav">
-    <li class="<%= 'active' if current_page?(destroy_user_session_path)%>">
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete , class:"nav-link"%>
-    </li>
+
 
     <% if current_user.present? %>
-      <li style="color: white">
+      <li style="visibility: hidden">
         <%= current_user.public_status == true ? "public account" : "private account" %>
       </li>
       <li>
@@ -30,6 +28,9 @@
           </a>
         </li>
       <% end %>
+      <li class="<%= 'active' if current_page?(destroy_user_session_path)%>">
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete , class:"nav-link"%>
+    </li>
     <% end %>
   </ul>
 </nav>

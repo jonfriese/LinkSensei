@@ -70,6 +70,28 @@ class ActiveSupport::TestCase
 
   end
 
+  def create_eleven_containers
+    visit '/'
+
+    within("//div[@id='signup']") do
+      fill_in "Full Name", with: "Test Guy"
+      fill_in "Enter email", with: "tester@example.com"
+      fill_in "Password", with: "test1234"
+      fill_in "Confirm password", with: "test1234"
+    end
+
+    click_on "Sign up"
+    page.text.must_include "Test Guy"
+    #When the user clicks the add container button in the main window
+    11.times do |i|
+    page.find('#new_container_plus').click
+    # #Then a modal window form should appear, and is filled in
+    fill_in "Name", with: "container #{i}"
+    fill_in "Description", with: "A description"
+    click_on "Create Container"
+    end
+  end
+
   def create_link
     #Then a modal window form should appear, and is filled in
     within("//div[@id='container_2']") do
@@ -109,7 +131,7 @@ class ActiveSupport::TestCase
 
     # and the user updates the default container to be starred
     click_on "edit_container_2"
-    check "Starred"
+    check "Important"
     click_on "Update Container"
 
     # the star will appear on the main view

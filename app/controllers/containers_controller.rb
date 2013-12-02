@@ -23,6 +23,8 @@ class ContainersController < ApplicationController
     @container = @user.containers.new(container_params)
     @container.user_id = @user.id
     @container.original_user_name = @user.name
+    @container.clone_count = 0
+    @container.parent_id = nil
 
     respond_to do |format|
       if @container.save
@@ -64,9 +66,15 @@ class ContainersController < ApplicationController
 
   def clone
     @container = Container.find(params[:container_id])
+    @container.clone_count += 1
+    @container.save!
     cloned_container = @container.amoeba_dup
+    if @container.parent_id = nil
+      cloned_container.parent_id = @container.id
+    else
+      cloned_container.parent_id = @container.parent_id
+    end
     current_user.containers << cloned_container
-    cloned_container.description += " Created by: #{@container.original_user_name}"
 
     respond_to do |format|
       if cloned_container.save
