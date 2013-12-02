@@ -131,7 +131,7 @@ class ActiveSupport::TestCase
 
     # and the user updates the default container to be starred
     click_on "edit_container_2"
-    check "Starred"
+    check "Important"
     click_on "Update Container"
 
     # the star will appear on the main view

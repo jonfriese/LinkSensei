@@ -1,6 +1,8 @@
 <% if (@user != current_user) && (@user.public_status != true) %>
-  <h3>You do not have access to this page.</h2>
-  <%= link_to 'Home', user_path(current_user) %>
+  <div class="well">
+    <h3>You do not have access to this page.</h2>
+    <%= link_to 'Home', user_path(current_user) %>
+  </div>
 <% else %>
   <%= render 'users/layouts/usersnav' %>
   <div class="users-show">

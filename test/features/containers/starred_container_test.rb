@@ -22,7 +22,7 @@ feature "A user can change a container starred settings" do
 
     # and when the unstarred container is starred,
     click_on "edit_container_3"
-    check "Starred"
+    check "Important"
     click_on "Update Container"
 
     # it will preceed the previously starred container, as it was starred more recently.
