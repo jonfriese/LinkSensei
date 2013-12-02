@@ -1,3 +1,18 @@
 // Place all the styles related to the Containers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.active-add  {
+  -webkit-transform: rotate(45deg) translate3d( 0, 0, 0);
+     -moz-transform: rotate(45deg);
+       -o-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -o-transition:.5s;
+  -ms-transition:.5s;
+  -moz-transition:.5s;
+  -webkit-transition:.5s;
+  transition:.5s;
+}
+
+
