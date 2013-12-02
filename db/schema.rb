@@ -20,9 +20,8 @@ ActiveRecord::Schema.define(version: 20131202223716) do
     t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "original_user_name"
     t.boolean  "starred"
-    t.string   "creator"
+    t.string   "original_user_name"
     t.integer  "clone_count"
     t.integer  "parent_id"
   end
