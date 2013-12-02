@@ -19,7 +19,7 @@
       </thead>
       <tbody>
         <% container.links.each do |link| %>
-          <tr>
+          <tr class="link_<%= link.id %>">
             <td><%= link_to link.name, url_with_protocol(link.url), :target => '_blank' %></td>
             <td><%= link.description %></td>
             <td colspan='2'>
