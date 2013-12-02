@@ -2,7 +2,7 @@
   <p>
     <b>New Container</b>
     <% if on_my_page? %>
-      <%= link_to '', new_user_container_path(@user) , class:"glyphicon glyphicon-plus", id: "new_container"%>
+      <%= link_to '', new_user_container_path(@user) , class:"glyphicon glyphicon-plus", id: "new_container", remote: true %>
     <% end %>
   </p>
 

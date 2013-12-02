@@ -20,8 +20,8 @@ ActiveRecord::Schema.define(version: 20131129053407) do
     t.string   "link"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "starred"
     t.string   "original_user_name"
+    t.boolean  "starred"
   end
 
   create_table "links", force: true do |t|
