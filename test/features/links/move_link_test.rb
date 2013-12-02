@@ -18,7 +18,7 @@ feature "As a site user, I want to to move a link from the staging area into a c
     click_on "Create Link"
     end
     within("//div[@id='custom-well-left']") do
-      find("#staging_edit_link").click
+      find("#link_edit").click
     end
     select('A container', :from => 'link[container_id]')
     click_on "Update Link"

@@ -1,1 +1,6 @@
-$("#staging_edit_link").hide().after("<%=j render("form") %>");
+$("#link_edit").hide().after("<%=j render("form") %>");
+$("#link-back").on('click', function() {
+    $("#link-back").remove();
+    $(".edit_link").remove();
+    $("#link_edit").fadeIn('default');
+});

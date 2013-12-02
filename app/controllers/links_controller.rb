@@ -15,6 +15,11 @@ class LinksController < ApplicationController
   end
 
   def edit
+    @link = @container.links.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create
