@@ -14,7 +14,7 @@
 
             <span class="info-pop" data-toggle="popover" data-placement="right" data-content="<%= container.description %>" data-original-title="Description"><span class="glyphicon glyphicon-info-sign"></span></span>
             <%= link_to '', user_container_path(@user, container), class:'glyphicon glyphicon-new-window container-icon', id:"show" %>
-            <%= link_to '', edit_user_container_path(@user, container), class: "glyphicon glyphicon-edit container-icon", id: "edit_"+ dom_id(container) %>
+            <%= link_to '', edit_user_container_path(@user, container), class: "glyphicon glyphicon-edit container-icon", id: "edit_"+ dom_id(container), remote: true %>
             <%= link_to '', "#", class:'glyphicon glyphicon-plus container-icon', id:"add_link", "data-toggle" => "modal", 'data-target' => "#modal_link_" + dom_id(container) %>
 
           <% end %>

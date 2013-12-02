@@ -42,6 +42,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webkit (1.0.0)
+      capybara (~> 2.0, >= 2.0.2)
+      json
     capybara_minitest_spec (1.0.1)
       capybara (>= 2)
       minitest (>= 2)
@@ -198,6 +201,7 @@ PLATFORMS
 DEPENDENCIES
   amoeba
   anjlab-bootstrap-rails (~> 3.0.0.3)
+  capybara-webkit
   capybara_minitest_spec
   coffee-rails (~> 4.0.0)
   devise
