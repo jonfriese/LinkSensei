@@ -12,12 +12,7 @@
   <% end %>
 
 
-  <div class="form-group">
-    <div class="field">
-      <%= f.label :starred %>
-      <%= f.check_box :starred %>
-    </div>
-
+<div class="form-group">
   <div class="field">
     <% f.hidden_field :user_id %>
     <%= f.label :name %><br />
@@ -28,8 +23,10 @@
     <%= f.label :description %><br />
     <%= f.text_field(:description, rows: 10, class:"form-control") %>
   </div>
-
-
+  <div class="field">
+      <%= f.label :starred, "Important" %>
+      <%= f.check_box :starred %>
+  </div>
   <div class="actions" style="margin-top: 1em;">
     <%= f.submit(class: "btn btn-default btn-small custombtn") %>
   </div>
