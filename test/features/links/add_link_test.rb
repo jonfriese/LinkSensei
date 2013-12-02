@@ -75,6 +75,6 @@ feature "As a site user, I want to to add a link to my collection so that I use 
     fill_in "Description", with: "search"
     click_on "Create Link"
     end
-    page.text.must_include "Url URL must have a public suffix"
+    page.text.must_include "Url must have a public suffix"
   end
 end

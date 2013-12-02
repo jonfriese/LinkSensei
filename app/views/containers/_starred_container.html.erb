@@ -11,10 +11,12 @@
             <span>&#9733;</span>
 
             <%= link_to '', [@user, container], method: :delete, data: { confirm: 'Are you sure?' }, class:"glyphicon glyphicon-trash container-icon", id:"destroy" %>
-            <%= link_to '', "#", class: "glyphicon glyphicon-edit container-icon", id:"edit", "data-toggle" => "modal", 'data-target' => "#modal_edit_" + dom_id(container)%>
+
             <span class="info-pop" data-toggle="popover" data-placement="right" data-content="<%= container.description %>" data-original-title="Description"><span class="glyphicon glyphicon-info-sign"></span></span>
             <%= link_to '', user_container_path(@user, container), class:'glyphicon glyphicon-new-window container-icon', id:"show" %>
+            <%= link_to '', edit_user_container_path(@user, container), class: "glyphicon glyphicon-edit container-icon", id: "edit_"+ dom_id(container) %>
             <%= link_to '', "#", class:'glyphicon glyphicon-plus container-icon', id:"add_link", "data-toggle" => "modal", 'data-target' => "#modal_link_" + dom_id(container) %>
+
           <% end %>
           <% if on_my_page? == false %>
             <%= link_to 'CLONE', user_container_clone_path(@user, container), method: :post %>
