@@ -1,5 +1,5 @@
 <% unless container.starred == true %>
-<div class="well col-lg-6 content-well" id="<%= dom_id(container) %>">
+  <div class="well col-lg-6 content-well" id="<%= dom_id(container) %>">
     <table class="table">
       <thead>
         <tr>
@@ -12,10 +12,13 @@
             <!-- show container -->
             <%= link_to '', user_container_path(@user, container), class:'glyphicon glyphicon-new-window container-icon', id:"show" %>
             <!-- edit container -->
-            <%= link_to '', edit_user_container_path(@user, container), class: "glyphicon glyphicon-edit container-icon", id: "edit_"+ dom_id(container), remote: true %>
+
+            <%= link_to '', edit_user_container_path(@user, container), class:'glyphicon glyphicon-edit container-icon', id:"edit_"+ dom_id(container), remote: true %>
+
             <!-- add link to container -->
             <%= link_to '', new_container_link_path(container), class:'glyphicon glyphicon-plus container-icon', id:"add_link", remote: true %>
           <% end %>
+          <!-- clone container -->
           <% unless on_my_page? %>
             <% if container.clone_count == 0 %>
               <%= link_to '', user_container_clone_path(@user, container), class:'glyphicon glyphicon-download container-icon', id:"clone_container", method: :post %>
