@@ -8,9 +8,9 @@ class User < ActiveRecord::Base
 
   after_create :create_unsorted_container
 
-  def creator?
-    role == 'creator'
-  end
+  # def creator?
+  #   role == 'creator'
+  # end
 
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_create do |user|
