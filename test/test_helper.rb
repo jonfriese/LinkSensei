@@ -113,6 +113,15 @@ class ActiveSupport::TestCase
     page.has_content? "Destroy"
   end
 
+  def create_staging_link
+    within "#custom-well-left" do
+      find("#stagingnew").click
+    end
+    fill_in "Url", with: "www.test.com"
+    fill_in "Name", with: "Test"
+    click_on "Create Link"
+  end
+
   def create_starred_container
     # Given a new user
     visit root_path

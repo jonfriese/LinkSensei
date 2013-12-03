@@ -22,20 +22,10 @@ feature "As a site user, I want to to add a link to my collection so that I use 
   end
 
   scenario "User creates a new link in the staging area" do
-    #Given a signed-in user
+
     sign_in
     create_container
-
-    #When the user clicks the add link button in the staging area
-
-    within "#custom-well-left" do
-      find("#stagingnew").click
-    end
-    fill_in "Url", with: "www.test.com"
-    fill_in "Name", with: "Test"
-    click_on "Create Link"
-
-    # #Then the resulting page should show the new link in the chosen container
+    create_staging_link
     within "#custom-well-left" do
       has_content? "test.com"
     end
