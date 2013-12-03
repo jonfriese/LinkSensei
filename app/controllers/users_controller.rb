@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   def show
     @user = User.find(params[:id])
     @containers = @user.containers.order(created_at: :desc).reject{|c| c.staging?}
@@ -12,6 +13,3 @@ class UsersController < ApplicationController
     @users = @users.search(params[:search])
   end
 end
-
-
-
