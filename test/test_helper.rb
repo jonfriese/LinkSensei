@@ -146,5 +146,4 @@ class ActiveSupport::TestCase
     # the star will appear on the main view
     page.text.must_include "★"
   end
-
 end
