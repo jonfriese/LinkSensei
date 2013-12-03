@@ -7,11 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 10.times do |i|
-  User.create(name: "user#{i+1}", email: "user#{i}@example.com", password: "password", public_status: true)
-  10.times do |j|
-    Container.create(name: "container#{j+1}", user_id: "#{i+1}", description: "description")
-    # 10.times do
-    #   Link.create(name: "google", url: "www.google.com", user_id: "#{i}", container_id: "#{j}")
-    # end
+  User.create(name: "user#{i+1}", email: "user#{i+1}@example.com", password: "password", public_status: true)
+  9.times do |j|
+    Container.create(name: "container#{j+1}", user_id: i, description: "description")
+    10.times do |k|
+      Link.create(name: "link#{k+1}", url: "www.google.com", user_id: (i), container_id: (j), description: "a link")
+    end
   end
 end
