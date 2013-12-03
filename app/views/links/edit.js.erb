@@ -1,9 +1,9 @@
-// alert("hello");
-$("#new_link_label").html("Edit Link")
-$("#stagingnew").hide().after("<%=j render("form") %>");
+$("#custom-well-left").children().hide();
+$("#custom-well-left").append("<%=j render("form") %>");
 $("#link-back").on('click', function() {
-    $("#link-back").remove();
-    $(".edit_link").remove();
-    $("#stagingnew").fadeIn('default');
-    $("#new_link_label").html("New Link")
+  $("#link-back").remove();
+  $(".edit_link").remove();
+  $("#stagingnew").fadeIn('default');
+  $("#new_link_label").html("New Link")
+  $("#custom-well-left").children().show();
 });
