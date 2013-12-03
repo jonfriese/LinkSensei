@@ -21,7 +21,7 @@ class ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
   def sign_in
     visit '/'
-    within("//div[@id='signin']") do
+    within "#signin" do
       fill_in "user[email]", with: users(:user).email
       fill_in "Password", with: "password"
     end
@@ -36,7 +36,7 @@ class ActiveSupport::TestCase
 
   def sign_in_as_public_user
     visit '/'
-    within("//div[@id='signin']") do
+    within "#signin" do
       fill_in "user[email]", with: users(:public_user).email
       fill_in "Password", with: "password"
     end
@@ -48,7 +48,7 @@ class ActiveSupport::TestCase
     #Given a signed-in user
     click_on "Sign Out"
 
-    within("//div[@id='signup']") do
+    within("#signup") do
       fill_in "Full Name", with: "Test Guy"
       fill_in "Enter email", with: "tester@example.com"
       fill_in "Password", with: "test1234"
@@ -74,7 +74,7 @@ class ActiveSupport::TestCase
   def create_eleven_containers
     visit '/'
 
-    within("//div[@id='signup']") do
+    within("#signup") do
       fill_in "Full Name", with: "Test Guy"
       fill_in "Enter email", with: "tester@example.com"
       fill_in "Password", with: "test1234"
@@ -95,7 +95,7 @@ class ActiveSupport::TestCase
 
   def create_link
     #Then a modal window form should appear, and is filled in
-    within("//div[@id='container_2']") do
+    within("#container_2") do
         find("#show").click
     end
 
@@ -126,7 +126,7 @@ class ActiveSupport::TestCase
   def create_starred_container
     # Given a new user
     visit root_path
-    within("//div[@id='signup']") do
+    within("#signup") do
       fill_in "Full Name", with: "Test Guy"
       fill_in "Enter email", with: "tester@example.com"
       fill_in "Password", with: "test1234"
