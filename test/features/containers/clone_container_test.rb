@@ -22,7 +22,7 @@ feature "As a site user, I want to clone a container from another user, so that 
 
     # save_and_open_page
     within "#container_3" do
-      click_on "CLONE"
+      click_on "clone_container"
     end
 
     click_on "Home"
