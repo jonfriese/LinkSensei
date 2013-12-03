@@ -8,10 +8,10 @@
 
 3.times do |i|
   u = User.create(name: Faker::Name.first_name, email: "user#{i+1}@example.com", password: "password", public_status: true)
-  5.times do |j|
+  10.times do |j|
     c = u.containers.create( name: "Container #{j}", description: Faker::Lorem.paragraph[0..200], clone_count: 0,
                              original_user_name: u.name)
-    2.times do
+    5.times do
       l = c.links.create( name: Faker::Lorem.word, url: Faker::Internet.domain_name, description: Faker::Lorem.sentence[0..120])
     end
   end

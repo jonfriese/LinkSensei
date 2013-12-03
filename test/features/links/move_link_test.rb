@@ -5,25 +5,15 @@ feature "As a site user, I want to to move a link from the staging area into a c
   sign_in
 
     create_container
+    create_staging_link
 
-    #When the user clicks the add link button in the staging area
-
-    within("//div[@id='custom-well-left']") do
-      find("#stagingnew").click
-    end
-    # Then a form should appear, and is filled in
-    within("//div[@id='modal_link_container_1']") do
-      fill_in "Url", with: "www.test.com"
-    fill_in "Name", with: "Test"
-    click_on "Create Link"
-    end
-    within("//div[@id='custom-well-left']") do
+    within "#custom-well-left" do
       find("#link_edit").click
     end
     select('A container', :from => 'link[container_id]')
     click_on "Update Link"
 
-    within("//div[@id='container_2']") do
+    within("#container_2") do
       find("#show").click
     end
     page.has_content? "Test"
