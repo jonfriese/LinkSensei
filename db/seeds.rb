@@ -7,11 +7,14 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 3.times do |i|
-  u = User.create(name: Faker::Name.name, email: "user#{i+1}@example.com", password: "password", public_status: true)
-  10.times do
-    c = u.containers.create( name: Faker::Name.title, description: "description" )
+  u = User.create(name: Faker::Name.first_name, email: "user#{i+1}@example.com", password: "password", public_status: true)
+  u.save!
+  10.times do |j|
+    c = u.containers.create( name: "container#{j}", description: "description" )
+    c.save!
     5.times do
-      l = c.links.create( name: Faker::Name.title, url: Faker::Internet.url, description: "a link" )
+      l = c.links.create( name: Faker::Internet.domain_name, url: Faker::Internet.domain_name, description: "a link" )
+      l.save!
     end
   end
 end
