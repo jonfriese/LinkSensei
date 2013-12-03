@@ -41,6 +41,34 @@ feature "As a site user, I want to to add a link to my collection so that I use 
     end
   end
 
+  scenario "User creates a new link in an existing container and expands container to full page view" do
+    sign_in
+    create_container
+
+    within "#container_3" do
+      click_on "add_link"
+    end
+
+    fill_in "Url", with: "www.test.com"
+    fill_in "Name", with: "Test"
+    fill_in "Description", with: "test test test test test test test test "
+    click_on "Create Link"
+    #Then the resulting page should show the new link in the chosen container
+
+    within "#container_3" do
+      has_content? "test.com"
+      has_content? "Test"
+      has_content? "..."
+    end
+
+    within "#container_3" do
+     find("#show").click
+    end
+    page.text.must_include "Test"
+    page.text.must_include "test.com"
+    page.text.must_include "test test test test test test test test "
+  end
+
   scenario "User creates a new link in the staging area" do
 
     sign_in
