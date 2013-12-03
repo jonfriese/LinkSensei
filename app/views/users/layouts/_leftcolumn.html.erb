@@ -1,4 +1,12 @@
 <% @staging.each do |staging| %>
+
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-warning"><%= alert %></p>
+  <% end %>
+
   <p>
     <b id="new_container_label">New Container</b>
     <% if on_my_page? %>

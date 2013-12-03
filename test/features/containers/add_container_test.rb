@@ -9,6 +9,8 @@ feature "As a site user, I want to add a container, so that I can store links" d
 
     #When the user clicks the create container button in the main window
     create_container
+    page.has_css? ".alert alert-success"
+    page.has_content? "Container was successfully created."
   end
 
 
@@ -33,6 +35,7 @@ feature "As a site user, I want to add a container, so that I can store links" d
     fill_in "Description", with: ""
     click_on "Create Container"
     # And an error message is displayed
+    page.has_css? ".alert alert-warning"
     page.has_content? "prohibited"
     page.has_content? "Name can't be blank"
   end

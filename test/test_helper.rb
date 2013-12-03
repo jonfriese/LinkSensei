@@ -67,7 +67,8 @@ class ActiveSupport::TestCase
     # #Then the resulting page should show the new container in the index
     page.has_content? "A container"
     page.has_content? "A description"
-
+    page.has_css? ".alert alert-success"
+    page.has_content? "Container was successfully created."
   end
 
   def create_eleven_containers
