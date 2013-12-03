@@ -3,21 +3,10 @@ require "test_helper"
 feature "As a site user, I want to to delete a link I had previously saved, so that I can eliminate clutter" do
   scenario "User deletes a link from the staging area" do
     sign_in
-
     create_container
+    create_staging_link
 
-    #When the user clicks the add link button in the staging area
-
-    within("//div[@id='custom-well-left']") do
-      find("#stagingnew").click
-    end
-    # Then a form should appear, and is filled in
-    within("//div[@id='modal_link_container_1']") do
-      fill_in "Url", with: "www.test.com"
-    fill_in "Name", with: "Test"
-    click_on "Create Link"
-    end
-    within("//div[@id='custom-well-left']") do
+    within("#custom-well-left") do
       find("#staging_trash_link").click
     end
     page.wont_have_content "www.test.com"

@@ -6,12 +6,12 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-10.times do |i|
-  User.create(name: "user#{i+1}", email: "user#{i}@example.com", password: "password", public_status: true)
+3.times do |i|
+  u = User.create(name: Faker::Name.first_name, email: "user#{i+1}@example.com", password: "password", public_status: true)
   10.times do |j|
-    Container.create(name: "container#{j+1}", user_id: "#{i+1}", description: "description")
-    # 10.times do
-    #   Link.create(name: "google", url: "www.google.com", user_id: "#{i}", container_id: "#{j}")
-    # end
+    c = u.containers.create( name: "Container #{j}", description: Faker::Lorem.paragraph[0..200], clone_count: 0)
+    5.times do
+      l = c.links.create( name: Faker::Lorem.word, url: Faker::Internet.domain_name, description: Faker::Lorem.sentence[0..120])
+    end
   end
 end

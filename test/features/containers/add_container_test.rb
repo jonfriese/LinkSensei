@@ -17,7 +17,7 @@ feature "As a site user, I want to add a container, so that I can store links" d
 
     visit root_path
 
-    within("//div[@id='signup']") do
+    within "#signup" do
       fill_in "Full Name", with: "Test Guy"
       fill_in "Enter email", with: "tester@example.com"
       fill_in "Password", with: "test1234"
