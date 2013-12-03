@@ -21,7 +21,8 @@ feature "As a site user, I want to clone a container from another user, so that 
 
     click_on "Test Guy"
 
-    within("//div[@id='container_2']") do
+    # save_and_open_page
+    within "#container_3" do
       click_on "CLONE"
     end
 
