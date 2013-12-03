@@ -8,7 +8,7 @@
             <% if on_my_page? %>
               <span>&#9733;</span>
               <!-- trash -->
-              <%= link_to '', [@user, container], method: :delete, data: { confirm: 'Are you sure?' }, class:"glyphicon glyphicon-trash container-icon", id:"destroy" %>
+              <%= link_to '', [@user, container], method: :delete, data: { confirm: 'Are you sure?' }, class:"glyphicon glyphicon-trash container-icon", id:"destroy", remote: true %>
               <!-- popover description -->
               <span class="info-pop" data-toggle="popover" data-placement="right" data-content="<%= container.description %>" data-original-title="Description"><span class="glyphicon glyphicon-info-sign"></span></span>
               <!-- show container -->
@@ -27,7 +27,7 @@
         </thead>
         <tbody>
           <% container.links.each do |link| %>
-            <tr>
+            <tr id="link_<%= link.id %>">
               <td><%= link_to link.name, url_with_protocol(link.url), :target => '_blank' %></td>
               <% if link.description.length > 30 %>
                 <td><%= link.description[1..30]+"..." %></td>
@@ -37,7 +37,7 @@
               <td colspan='2'>
               <% if on_my_page? %>
               <!-- trash link -->
-                <%= link_to '', [container, link], class:"glyphicon glyphicon-trash container-icon", id: "destroylink", method: :delete, data: { confirm: 'Are you sure?' } %>
+                <%= link_to '', [container, link], class:"glyphicon glyphicon-trash container-icon", id: "destroylink", method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
               <!-- edit link -->
                 <%= link_to '', edit_container_link_path(container, link), class:"glyphicon glyphicon-edit container-icon", id: "editlink", remote: true %>
 

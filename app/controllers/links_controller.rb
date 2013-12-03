@@ -56,7 +56,7 @@ class LinksController < ApplicationController
     @link.destroy
     respond_to do |format|
       format.html { redirect_to user_path(current_user) }
-      format.json { head :no_content }
+      format.js
     end
   end
 
