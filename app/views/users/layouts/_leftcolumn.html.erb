@@ -1,39 +1,37 @@
 <% @staging.each do |staging| %>
-  <p>
-    <b id="new_container_label">New Container</b>
-    <% if on_my_page? %>
-      <%= link_to '', new_user_container_path(@user) , class:"glyphicon glyphicon-plus", id: "new_container_plus", remote: true %>
-    <% end %>
-  </p>
+  <% if on_my_page? %>
+    <p>
+      <b id="new_container_label">New Container</b>
+        <%= link_to '', new_user_container_path(@user) , class:"glyphicon glyphicon-plus", id: "new_container_plus", remote: true %>
+    </p>
+    <p>
+      <b id="new_link_label">New Link</b>
+        <%= link_to "", new_container_link_path(staging), class:"glyphicon glyphicon-plus", id: "stagingnew", remote: true %>
+    </p>
+    <a id="staging-link" onclick="revealTable()" >View Staging <span class="glyphicon glyphicon-new-window"></span></a>
+    <a id="staging-link-2" onclick="hideTable()" >Hide Staging <span class="glyphicon glyphicon-remove"></span></a>
 
-  <p>
-    <b id="new_link_label">New Link</b>
-    <% if on_my_page? %>
-      <%= link_to "", new_container_link_path(staging), class:"glyphicon glyphicon-plus", id: "stagingnew", remote: true %>
-    <% end%>
-  </p>
-
+  <% end%>
   <hr id="welcome-page-hr">
-
-  <table class="staging-left">
-  <tbody>
-  <% staging.links.each do |link| %>
-    <tr>
-      <td colspan="2">
-        <%= link_to link.name, url_with_protocol(link.url), :target => '_blank' %>
-          <% if on_my_page? %>
-            <%= link_to '', [staging, link], method: :delete, data: { confirm: 'Are you sure?' }, class:"glyphicon glyphicon-trash container-icon", id: "staging_trash_link" %>
-            <%= link_to '', edit_container_link_path(staging, link), class: "glyphicon glyphicon-edit container-icon", id: "link_edit", remote: true %>
-          <% end %>
-      </td>
-    </tr>
-    <tr>
-      <td> &nbsp&nbsp
-         <%= link.description %>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
+  <table class="staging-left" id="reveal-this">
+    <tbody>
+      <% staging.links.each do |link| %>
+        <tr>
+          <td colspan="2">
+            <%= link_to link.name, url_with_protocol(link.url), :target => '_blank' %>
+              <% if on_my_page? %>
+                <%= link_to '', [staging, link], method: :delete, data: { confirm: 'Are you sure?' }, class:"glyphicon glyphicon-trash container-icon", id: "staging_trash_link" %>
+                <%= link_to '', edit_container_link_path(staging, link), class: "glyphicon glyphicon-edit container-icon", id: "link_edit", remote: true %>
+              <% end %>
+          </td>
+        </tr>
+        <tr>
+          <td> &nbsp&nbsp
+             <%= link.description %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
   </table>
 <% end %>
 
