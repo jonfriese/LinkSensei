@@ -1,6 +1,13 @@
-
 .navbar-brand  {
    color: white !important;
+}
+
+#staging-link  {
+  display: none;
+}
+
+#staging-link-2  {
+  display: none;
 }
 
 .content-well  {
@@ -51,7 +58,7 @@
 
 #custom-well-left  {
   min-height: 100%;
-  padding: 20px;
+  padding: 10px 20px 20px 20px;
   margin-bottom: 20px;
   background-color: whitesmoke;
   border: 1px solid #e3e3e3;
@@ -69,7 +76,7 @@
 
 .container-icon  {
   float:right;
-  margin-right: 5px;
+  margin-right: 8px;
 }
 
 .add-staging  {
@@ -93,14 +100,41 @@
     position: fixed;
     top: 50px;
     z-index: 50;
-    min-height: 25%;
+    min-height: 10%;
     width: 100%;
+    padding: 10px 0px 0px 15px;
+  }
 
+  .staging-left  {
+    display: none;
+  }
+
+  #welcome-page-hr  {
+    display: none;
   }
 
   #all_containers  {
     float: none;
-    padding-top: 27%;
+    padding-top: 12%;
+  }
+
+  .content-well  {
+    margin: 0px 10px 20px 10px;
+    padding: 10px;
+  }
+
+  #staging-link  {
+    display: inline;
+    position: fixed;
+    top: 60px;
+    right: 20px;
+  }
+
+  #staging-link-2  {
+    display: none;
+    position: fixed;
+    top: 60px;
+    right: 20px;
   }
 
 }

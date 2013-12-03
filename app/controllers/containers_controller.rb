@@ -71,6 +71,8 @@ class ContainersController < ApplicationController
     @container.clone_count += 1
     @container.save!
     cloned_container = @container.amoeba_dup
+    cloned_container.original_user_name = @container.original_user_name
+    cloned_container.original_user_id = @container.user_id
     if @container.parent_id = nil
       cloned_container.parent_id = @container.id
     else
@@ -90,18 +92,18 @@ class ContainersController < ApplicationController
   end
 
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_container
-      @container = Container.find(params[:id])
-    end
+private
+  # Use callbacks to share common setup or constraints between actions.
+  def set_container
+    @container = Container.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def container_params
-      params.require(:container).permit(:name, :description, :starred)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def container_params
+    params.require(:container).permit(:name, :description, :starred)
+  end
 
-    def load_user
-      @user = User.find(params[:user_id])
-    end
+  def load_user
+    @user = User.find(params[:user_id])
+  end
 end
