@@ -9,8 +9,10 @@
               <span>&#9733;</span>
               <!-- trash -->
               <%= link_to '', [@user, container], method: :delete, data: { confirm: 'Are you sure?' }, class:"glyphicon glyphicon-trash container-icon", id:"destroy" %>
+            <% end %>
               <!-- popover description -->
               <span class="info-pop" data-toggle="popover" data-placement="right" data-content="<%= container.description %>" data-original-title="Description"><span class="glyphicon glyphicon-info-sign"></span></span>
+            <% if on_my_page? %>
               <!-- show container -->
               <%= link_to '', user_container_path(@user, container), class:'glyphicon glyphicon-new-window container-icon', id:"show" %>
               <!-- edit container -->
@@ -20,8 +22,27 @@
             <% end %>
             <!-- clone container -->
             <% unless on_my_page? %>
-              <%= link_to 'CLONE', user_container_clone_path(@user, container), method: :post %>
+            <% if container.clone_count == 0 %>
+              <%= link_to '', user_container_clone_path(@user, container), class:'glyphicon glyphicon-download container-icon', id:"clone_container", method: :post %>
+            <% else %>
+              <% if container.original_user_id %>
+                Created By: <%= link_to container.original_user_name, user_path(container.original_user_id) %>
+              <% else %>
+                <% if container.clone_count? && container.clone_count > 0 %>
+                  <%= link_to '', user_container_clone_path(@user, container), class:'glyphicon glyphicon-download container-icon', id:"clone_container", method: :post %>
+                  Clone Count: <%= container.clone_count %>
+                <% end %>
+              <% end %>
             <% end %>
+          <% else %>
+            <% if container.original_user_id %>
+              Created By: <%= link_to container.original_user_name, user_path(container.original_user_id) %>
+            <% else %>
+              <% if container.clone_count? && container.clone_count > 0 %>
+                Clone Count: <%= container.clone_count %>
+              <% end %>
+            <% end %>
+          <% end %>
             </th>
           </tr>
         </thead>
