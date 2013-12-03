@@ -1,19 +1,26 @@
 
 <% if (@user != current_user) && (@user.public_status != true) %>
-  <div class="well">
-    <h3>You do not have access to this page.</h2>
+<div class="well">
+  <h3>You do not have access to this page.</h2>
     <%= link_to 'Home', user_path(current_user) %>
   </div>
-<% else %>
+  <% else %>
+  <% if on_my_page? %>
   <%= render 'users/layouts/usersnav' %>
   <div class="users-show">
     <% if @user == current_user %>
-      <div class="col-sm-3 col-md-3 col-lg-3" id="custom-well-left">
-        <%= render 'users/layouts/leftcolumn' %>
-      </div>
+    <div class="col-sm-3 col-md-3 col-lg-3" id="custom-well-left">
+      <%= render 'users/layouts/leftcolumn' %>
+    </div>
     <% end %>
-  <div class="col-lg-9" id="all_containers">
-    <%= render 'users/layouts/rightcolumn' %>
-  </div>
+    <div class="col-lg-9" id="all_containers">
+      <%= render 'users/layouts/rightcolumn' %>
+    </div>
+    <% else %>
+    <%= render 'users/layouts/usersnav' %>
+    <div class="container">
+      <%= render 'users/layouts/rightcolumn' %>
+    </div>
+    <% end %>
   </div>
 <% end %>
