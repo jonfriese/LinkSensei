@@ -11,13 +11,13 @@
           <!-- popover description -->
             <span class="info-pop" data-toggle="popover" data-placement="right" data-content="<%= container.description %>" data-original-title="Description"><span class="glyphicon glyphicon-info-sign"></span></span>
           <% if on_my_page? %>
-          <!-- show container -->
+            <!-- show container -->
             <%= link_to '', user_container_path(@user, container), class:'glyphicon glyphicon-new-window container-icon', id:"show" %>
 
-          <!-- edit container -->
+            <!-- edit container -->
             <%= link_to '', edit_user_container_path(@user, container), class: "glyphicon glyphicon-edit container-icon", id: "edit_"+ dom_id(container), remote: true %>
 
-          <!-- add link to container -->
+            <!-- add link to container -->
             <%= link_to '', new_container_link_path(container), class:'glyphicon glyphicon-plus container-icon', id:"add_link", remote: true %>
           <% end %>
           <% unless on_my_page? %>

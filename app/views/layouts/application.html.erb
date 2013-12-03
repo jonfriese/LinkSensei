@@ -5,10 +5,22 @@
     <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
+    <link rel="shortcut icon" type="image/png" href="/assets/icon.png" />
   </head>
   <body>
-
     <%= yield %>
+    <script>
+      function revealTable()  {
+        document.getElementById("reveal-this").style.display='inline-table';
+        document.getElementById("staging-link").style.display='none';
+        document.getElementById("staging-link-2").style.display='inline';
+      }
+      function hideTable()  {
+        document.getElementById("reveal-this").style.display="none";
+        document.getElementById("staging-link").style.display="inline";
+        document.getElementById("staging-link-2").style.display="none";
+      }
+    </script>
 
     <script>
       $('.info-pop').popover({trigger: 'hover'});
