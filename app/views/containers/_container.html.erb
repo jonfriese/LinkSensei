@@ -18,13 +18,13 @@
           <% end %>
           <% unless on_my_page? %>
             <% if container.clone_count == 0 %>
-              <%= link_to 'CLONE', user_container_clone_path(@user, container), method: :post %>
+              <%= link_to '', user_container_clone_path(@user, container), class:'glyphicon glyphicon-download container-icon', id:"clone_container", method: :post %>
             <% else %>
               <% if container.original_user_id %>
                 Created By: <%= link_to container.original_user_name, user_path(container.original_user_id) %>
               <% else %>
                 <% if container.clone_count? && container.clone_count > 0 %>
-                  <%= link_to 'CLONE', user_container_clone_path(@user, container), method: :post %>
+                  <%= link_to '', user_container_clone_path(@user, container), class:'glyphicon glyphicon-download container-icon', id:"clone_container", method: :post %>
                   Clone Count: <%= container.clone_count %>
                 <% end %>
               <% end %>
