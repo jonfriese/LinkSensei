@@ -4,7 +4,7 @@ class LinksController < ApplicationController
   before_action :find_containers
 
   def index
-    @links = @container.links.load
+    # @links = @container.links.order(updated_at: :desc)
   end
 
   def new
