@@ -1,0 +1,9 @@
+$("#all_containers").children().hide();
+$("#all_containers").append("<%=j render("show") %>");
+$("#show-back").on('click', function() {
+  $("#show-back").remove();
+  $("#all_containers").children().last().remove();
+  $("#all_containers").fadeIn('default');
+  $("#all_containers").children().removeAttr("style");
+});
+

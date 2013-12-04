@@ -2,7 +2,7 @@
 
     <% if on_my_page? %>
       <!-- show container -->
-      <%= link_to '', user_container_path(@user, container), class:'glyphicon glyphicon-new-window container-icon', id:"show" %>
+      <%= link_to '', user_container_path(@user, container), class:'glyphicon glyphicon-new-window container-icon', id:"show", remote: true %>
       <!-- edit container -->
       <%= link_to '', edit_user_container_path(@user, container), class: "glyphicon glyphicon-edit container-icon", id: "edit_"+ dom_id(container), remote: true %>
       <!-- add link to container -->
