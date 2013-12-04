@@ -9,10 +9,15 @@
 3.times do |i|
   u = User.create(name: Faker::Name.first_name, email: "user#{i+1}@example.com", password: "password", public_status: true)
   10.times do |j|
-    c = u.containers.create( name: "Container #{j}", description: Faker::Lorem.paragraph[0..200], clone_count: 0,
+    container_name = Faker::Lorem.word
+     if container_name.length < 5 || container_name.length > 20
+       container_name = "Container #{j}"
+     end
+    c = u.containers.create( name: container_name, description: Faker::Lorem.paragraph[0..200], clone_count: 0,
                              original_user_name: u.name)
     5.times do
       l = c.links.create( name: Faker::Lorem.word, url: Faker::Internet.domain_name, description: Faker::Lorem.sentence[0..120])
     end
   end
 end
+

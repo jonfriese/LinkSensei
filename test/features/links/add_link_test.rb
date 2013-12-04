@@ -20,6 +20,8 @@ feature "As a site user, I want to to add a link to my collection so that I use 
       has_content? "test.com"
       has_content? "Test"
     end
+    page.has_css? ".alert alert-success"
+    page.has_content? "Link was successfully created."
   end
 
   scenario "User creates a new link with a long name in an existing container and expands container to full page view" do
@@ -41,6 +43,8 @@ feature "As a site user, I want to to add a link to my collection so that I use 
       has_content? "Test"
       has_content? "..." #desription is reduced
     end
+    page.has_css? ".alert alert-success"
+    page.has_content? "Link was successfully created."
 
     within "#container_3" do
      find("#show").click
@@ -58,6 +62,8 @@ feature "As a site user, I want to to add a link to my collection so that I use 
     within "#custom-well-left" do
       has_content? "test.com"
     end
+    page.has_css? ".alert alert-success"
+    page.has_content? "Link was successfully created."
   end
 
   #unhappy paths
@@ -76,6 +82,7 @@ feature "As a site user, I want to to add a link to my collection so that I use 
     click_on "Create Link"
 
     #Then the resulting page should show the new link in the staging area
+    page.has_css? ".alert alert-warning"
     page.has_content? "prohibited"
     page.has_content? "Url can't be blank"
   end
@@ -91,6 +98,7 @@ feature "As a site user, I want to to add a link to my collection so that I use 
     fill_in "Name", with: "google"
     fill_in "Description", with: "search"
     click_on "Create Link"
+    page.has_css? ".alert alert-warning"
     page.text.must_include "Url must have a public suffix"
   end
 end

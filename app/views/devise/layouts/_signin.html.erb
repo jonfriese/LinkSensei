@@ -1,5 +1,4 @@
-<div class="well">
-  <h2 class="form-title">Sign in</h2>
+<h2 class="form-title">Sign in</h2>
   <%= form_for(resource, html: {role:"form"}, :as => resource_name, :url => session_path(resource_name)) do |f| %>
     <div class="form-group">
       <%= f.email_field :email, :autofocus => true, class:"form-control", placeholder:"Enter email " %>
@@ -20,5 +19,3 @@
     <% end -%>
   <% end -%>
 </span>
-</div>
-

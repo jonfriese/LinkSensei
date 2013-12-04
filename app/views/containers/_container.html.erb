@@ -1,70 +1,15 @@
 <% unless container.starred == true %>
-<div class="well col-lg-6 content-well" id="<%= dom_id(container) %>">
+  <div class="well col-lg-6 content-well" id="<%= dom_id(container) %>">
     <table class="table">
       <thead>
         <tr>
           <th colspan="4"><%= container.name %>
+          <% if on_my_page? %>
           <!-- trash -->
-          <% if on_my_page? %>
-            <%= link_to '', [@user, container], method: :delete, data: { confirm: 'Are you sure?' }, class:"glyphicon glyphicon-trash container-icon", id:"destroy" %>
+            <%= link_to '', [@user, container], method: :delete, data: { confirm: 'Are you sure?' }, class:"glyphicon glyphicon-trash container-icon", id:"destroy", remote: true %>
           <% end %>
-          <!-- popover description -->
-            <span class="info-pop" data-toggle="popover" data-placement="right" data-content="<%= container.description %>" data-original-title="Description"><span class="glyphicon glyphicon-info-sign"></span></span>
-          <% if on_my_page? %>
-            <!-- show container -->
-            <%= link_to '', user_container_path(@user, container), class:'glyphicon glyphicon-new-window container-icon', id:"show" %>
-
-            <!-- edit container -->
-            <%= link_to '', edit_user_container_path(@user, container), class: "glyphicon glyphicon-edit container-icon", id: "edit_"+ dom_id(container), remote: true %>
-
-            <!-- add link to container -->
-            <%= link_to '', new_container_link_path(container), class:'glyphicon glyphicon-plus container-icon', id:"add_link", remote: true %>
-          <% end %>
-          <% unless on_my_page? %>
-            <% if container.clone_count == 0 %>
-              <%= link_to 'CLONE', user_container_clone_path(@user, container), method: :post %>
-            <% else %>
-              <% if container.original_user_id %>
-                Created By: <%= link_to container.original_user_name, user_path(container.original_user_id) %>
-              <% else %>
-                <% if container.clone_count? && container.clone_count > 0 %>
-                  <%= link_to 'CLONE', user_container_clone_path(@user, container), method: :post %>
-                  Clone Count: <%= container.clone_count %>
-                <% end %>
-              <% end %>
-            <% end %>
-          <% else %>
-            <% if container.original_user_id %>
-              Created By: <%= link_to container.original_user_name, user_path(container.original_user_id) %>
-            <% else %>
-              <% if container.clone_count? && container.clone_count > 0 %>
-                Clone Count: <%= container.clone_count %>
-              <% end %>
-            <% end %>
-          <% end %>
-          </th>
+          <%= render 'containers/all_containers', :container => container %>
         </tr>
-      </thead>
-      <tbody>
-        <% container.links.each do |link| %>
-          <tr class="link_<%= link.id %>">
-            <td><%= link_to link.name, url_with_protocol(link.url), :target => '_blank' %></td>
-            <% if link.description.length > 30 %>
-            <td><%= link.description[1..30]+"..." %></td>
-            <% else %>
-            <td><%= link.description %></td>
-            <% end %>
-            <td colspan='2'>
-            <% if on_my_page? %>
-            <!-- trash link -->
-              <%= link_to '', [container, link], class:"glyphicon glyphicon-trash container-icon", id: "destroylink", method: :delete, data: { confirm: 'Are you sure?' }, remote: true %>
-
-            <!-- edit link -->
-              <%= link_to '', edit_container_link_path(container, link), class:"glyphicon glyphicon-edit container-icon", id: "editlink", remote: true %>
-            <% end %>
-            </td>
-          </tr>
-        <% end %>
       </tbody>
     </table>
   </div>

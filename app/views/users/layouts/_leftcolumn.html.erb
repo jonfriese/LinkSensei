@@ -1,4 +1,14 @@
 <% @staging.each do |staging| %>
+
+
+  <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+  <% end %>
+  <% if alert %>
+    <p class="alert alert-warning"><%= alert %></p>
+  <% end %>
+
+
   <% if on_my_page? %>
     <p>
       <b id="new_container_label">New Container</b>
@@ -10,6 +20,7 @@
     </p>
     <a class="exclude" id="staging-link" >View Staging <span class="glyphicon glyphicon-new-window"></span></a>
     <a class="exclude" id="staging-link-2" onclick="hideTable()" >Hide Staging <span class="glyphicon glyphicon-remove"></span></a>
+
 
   <% end%>
   <hr class="exclude1" id="welcome-page-hr">

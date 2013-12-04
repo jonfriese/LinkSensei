@@ -4,33 +4,30 @@
       <%= link_to "Link Sensei", root_path, class:"navbar-brand" %>
     </li>
   </ul>
-
   <ul class="links nav">
-
-
     <% if current_user.present? %>
+      <!-- public status hidden message -->
       <li style="visibility: hidden">
         <%= current_user.public_status == true ? "public account" : "private account" %>
       </li>
-      <li>
-        <%= link_to current_user.name, edit_user_registration_path(current_user) %>
-      </li>
+      <% if @user == current_user %>
+        <li>
+          <%= link_to current_user.name, edit_user_registration_path(current_user) %>
+        </li>
+      <% else %>
+        <li class="alert alert-warning" style="padding: .25em">
+          Viewing User <%= @user.name %>
+        </li>
+        <li>
+          <%= link_to 'Home', current_user, class:"nav-link" %>
+        </li>
+      <% end %>
       <li>
         <%= link_to "Browse Users", users_path, class:"nav-link" %>
       </li>
-      <% unless @user == current_user %>
-        <li style="color: white">
-          viewing user <%= @user.name %>
-        </li>
-        <li>
-          <a>
-            <%= link_to 'Home', current_user, class:"nav-link" %>
-          </a>
-        </li>
-      <% end %>
       <li class="<%= 'active' if current_page?(destroy_user_session_path)%>">
-      <%= link_to "Sign Out", destroy_user_session_path, method: :delete , class:"nav-link"%>
-    </li>
+        <%= link_to "Sign Out", destroy_user_session_path, method: :delete , class:"nav-link"%>
+      </li>
     <% end %>
   </ul>
 </nav>

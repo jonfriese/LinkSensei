@@ -32,7 +32,8 @@ class ContainersController < ApplicationController
         format.html { redirect_to user_path(@user), notice: 'Container was successfully created.' }
         format.js
       else
-        format.html { render action: 'new' }
+        message = @container.errors.full_messages[0]
+        format.html { redirect_to user_path(current_user), alert: message }
         format.json { render json: @container.errors, status: :unprocessable_entity }
       end
     end
@@ -43,10 +44,11 @@ class ContainersController < ApplicationController
   def update
     respond_to do |format|
       if @container.update(container_params)
-        format.html { redirect_to user_path(@user), notice: 'Container was successfully updated.' }
+        format.html { redirect_to user_path(current_user), notice: 'Container was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        message = @container.errors.full_messages[0]
+        format.html { redirect_to user_path(current_user), alert: message }
         format.json { render json: @container.errors, status: :unprocessable_entity }
       end
     end
