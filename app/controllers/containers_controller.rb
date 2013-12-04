@@ -4,7 +4,6 @@ class ContainersController < ApplicationController
   before_action :load_user
 
   def index
-    # @containers = @user.containers.load
   end
 
   def show

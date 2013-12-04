@@ -35,7 +35,7 @@
   </tr>
 </thead>
 <tbody>
-  <% container.links.each do |link| %>
+  <% container.links.order(updated_at: :desc).each do |link| %>
     <tr id="link_<%= link.id %>">
       <td><%= link_to link.name, url_with_protocol(link.url), :target => '_blank' %></td>
         <% if link.description.length > 30 %>
