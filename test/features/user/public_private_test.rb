@@ -38,5 +38,14 @@ feature "A user can change the user account privacy settings" do
     click_on "Sign Out"
   end
 
+  scenario "Private users cannot be viewed by direct URL entry." do
+     skip
+     sign_in_as_public_user
+     visit '/users/1'
+     page.text.wont_include "#{users(:user).name}"
+     page.text.must_include "You aren't authorized to view that page!"
+  end
+
+
 end
 
