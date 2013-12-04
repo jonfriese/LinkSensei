@@ -1,4 +1,5 @@
 require "test_helper"
+require "pry"
 
 feature "As a site user, I want to to add a link to my collection so that I use it in the future" do
 
@@ -65,6 +66,31 @@ feature "As a site user, I want to to add a link to my collection so that I use 
     page.has_css? ".alert alert-success"
     page.has_content? "Link was successfully created."
   end
+
+  # scenario "User creates a new link in the staging area and moves" do
+  #   sign_in
+  #   create_container
+
+  #   within "#custom-well-left" do
+  #     find("#stagingnew").click
+  #   end
+  #   fill_in "Url", with: "www.test.com"
+  #   fill_in "Name", with: "Test"
+  #   select 'A container', :from => 'link_container_id'
+  #   click_on "Create Link"
+  #   binding.pry
+
+  #   within("#container_3") do
+  #     has_content? "test.com"
+  #   end
+
+  #   within("#reveal-this") do
+  #     has_no_content? "test.com"
+  #   end
+
+  #   page.has_css? ".alert alert-success"
+  #   page.has_content? "Link was successfully created."
+  # end
 
   #unhappy paths
   scenario "User creates a new link in an existing container, incorrectly" do

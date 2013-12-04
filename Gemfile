@@ -18,6 +18,8 @@ gem 'pundit'
 gem 'will_paginate', '~> 3.0.5'
 gem 'amoeba'
 gem 'public_suffix'
+gem 'thin'
+
 
 
 group :development, :test do
@@ -28,6 +30,7 @@ group :development, :test do
   gem 'capybara_minitest_spec'
   gem 'turn'
   gem 'pry'
+  gem 'pry-rails'
   gem 'sqlite3'
   gem 'simplecov', :require => false
 end
