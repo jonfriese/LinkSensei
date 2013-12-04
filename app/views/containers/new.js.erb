@@ -1,8 +1,7 @@
-$("#custom-well-left").children().hide();
+$("#custom-well-left").children().not(".exclude").hide();
 $("#custom-well-left").append("<%=j render("form") %>");
 $("#container-back").on('click', function() {
   $("#container-back").remove();
   $("#new_container").remove();
-  $("#custom-well-left").children().show();
+  $("#custom-well-left").children().not(".exclude").show().removeAttr("style");
 });
-

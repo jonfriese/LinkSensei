@@ -8,11 +8,11 @@
       <b id="new_link_label">New Link</b>
         <%= link_to "", new_container_link_path(staging), class:"glyphicon glyphicon-plus", id: "stagingnew", remote: true %>
     </p>
-    <a id="staging-link" onclick="revealTable()" >View Staging <span class="glyphicon glyphicon-new-window"></span></a>
-    <a id="staging-link-2" onclick="hideTable()" >Hide Staging <span class="glyphicon glyphicon-remove"></span></a>
+    <a class="exclude" id="staging-link" >View Staging <span class="glyphicon glyphicon-new-window"></span></a>
+    <a class="exclude" id="staging-link-2" onclick="hideTable()" >Hide Staging <span class="glyphicon glyphicon-remove"></span></a>
 
   <% end%>
-  <hr id="welcome-page-hr">
+  <hr class="exclude1" id="welcome-page-hr">
   <table class="staging-left" id="reveal-this">
     <tbody>
       <% staging.links.each do |link| %>

@@ -6,24 +6,9 @@
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
     <link rel="shortcut icon" type="image/png" href="/assets/icon.png" />
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" />
   </head>
   <body>
     <%= yield %>
-    <script>
-      function revealTable()  {
-        document.getElementById("reveal-this").style.display='inline-table';
-        document.getElementById("staging-link").style.display='none';
-        document.getElementById("staging-link-2").style.display='inline';
-      }
-      function hideTable()  {
-        document.getElementById("reveal-this").style.display="none";
-        document.getElementById("staging-link").style.display="inline";
-        document.getElementById("staging-link-2").style.display="none";
-      }
-    </script>
-
-    <script>
-      $('.info-pop').popover({trigger: 'hover'});
-    </script>
   </body>
 </html>

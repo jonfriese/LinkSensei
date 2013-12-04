@@ -105,10 +105,6 @@
     padding: 10px 0px 0px 15px;
   }
 
-  .staging-left  {
-    display: none;
-  }
-
   #welcome-page-hr  {
     display: none;
   }
@@ -135,6 +131,10 @@
     position: fixed;
     top: 60px;
     right: 20px;
+  }
+
+  #reveal-this  {
+    display: none;
   }
 
 }
