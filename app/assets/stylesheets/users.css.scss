@@ -21,6 +21,14 @@
   list-style: none;
 }
 
+.navbar-brand  {
+  padding: 15px 0px 15px 15px;
+}
+
+.fixed-nav ul  {
+  padding-left: 0px !important;
+}
+
 .fixed-nav  {
   top: 0;
   right: 0;
@@ -58,7 +66,7 @@
 
 #custom-well-left  {
   min-height: 100%;
-  padding: 10px 20px 20px 20px;
+  padding: 10px 15px 20px 15px;
   margin-bottom: 20px;
   background-color: whitesmoke;
   border: 1px solid #e3e3e3;
@@ -107,11 +115,7 @@
     z-index: 50;
     min-height: 10%;
     width: 100%;
-    padding: 10px 0px 0px 15px;
-  }
-
-  .staging-left  {
-    display: none;
+    padding: 10px 15px 0px 15px;
   }
 
   #welcome-page-hr  {
@@ -142,5 +146,28 @@
     right: 20px;
   }
 
+  #reveal-this  {
+    display: none;
+  }
+
+  .alert-success  {
+    padding: 5px !important;
+  }
+
+  .alert  {
+    padding: 5px !important;
+    margin-bottom: 0px !important;
+  }
+
+  .alert-warning  {
+    padding: 5px !important;
+    margin-bottom: 0px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav > li > a {
+      padding: 10px 6px;
+    }
 }
 
