@@ -23,11 +23,11 @@ class LinksController < ApplicationController
   end
 
   def create
-    @link = @container.links.new(link_params)
-
+    # @link = @container.links.new(link_params)
+    @link = Link.new(link_params)
     respond_to do |format|
       if @link.save
-        @container.links << @link
+        # @container.links << @link
         format.html { redirect_to user_path(current_user), notice: 'Link was successfully created.' }
         format.json { render action: 'show', status: :created, location: @link }
       else

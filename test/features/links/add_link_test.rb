@@ -40,10 +40,10 @@ feature "As a site user, I want to to add a link to my collection so that I use 
     #Then the resulting page should show the new link in the chosen container
 
     within "#container_3" do
-      has_content? "example.com"
-      has_content? "Test"
-      has_content? "..." #desription is reduced
+      text.must_include "Test"
+      text.must_include "..." #desription is reduced
     end
+
     page.has_css? ".alert alert-success"
     page.has_content? "Link was successfully created."
 
@@ -67,30 +67,30 @@ feature "As a site user, I want to to add a link to my collection so that I use 
     page.has_content? "Link was successfully created."
   end
 
-  # scenario "User creates a new link in the staging area and moves" do
-  #   sign_in
-  #   create_container
+  scenario "User creates a new link in the staging area and moves" do
+    sign_in
+    create_container
 
-  #   within "#custom-well-left" do
-  #     find("#stagingnew").click
-  #   end
-  #   fill_in "Url", with: "www.test.com"
-  #   fill_in "Name", with: "Test"
-  #   select 'A container', :from => 'link_container_id'
-  #   click_on "Create Link"
-  #   binding.pry
+    within "#custom-well-left" do
+      find("#stagingnew").click
+    end
 
-  #   within("#container_3") do
-  #     has_content? "test.com"
-  #   end
+    fill_in "Url", with: "www.test.com"
+    fill_in "Name", with: "Test"
+    select 'A container', :from => 'link_container_id'
+    click_on "Create Link"
 
-  #   within("#reveal-this") do
-  #     has_no_content? "test.com"
-  #   end
+    within("#container_3") do
+      text.must_include "Test"
+    end
 
-  #   page.has_css? ".alert alert-success"
-  #   page.has_content? "Link was successfully created."
-  # end
+    within("#reveal-this") do
+      text.wont_include "Test"
+    end
+
+    page.has_css? ".alert alert-success"
+    page.has_content? "Link was successfully created."
+  end
 
   #unhappy paths
   scenario "User creates a new link in an existing container, incorrectly" do
