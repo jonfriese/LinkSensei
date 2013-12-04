@@ -76,6 +76,16 @@
   top: 50px;
   right: 0px;
   left: 0px;
+  bottom: 0px;
+  overflow-y: scroll;
+}
+
+.staging-left  {
+  margin-bottom: 40px;
+}
+
+.staging-left tr:nth-child(2n+1){
+  background-color: white;
 }
 
 #all_containers  {
@@ -93,10 +103,6 @@
 
 .star  {
   position: relative;
-}
-
-.staging-left tr:nth-child(2n+1){
-  background-color: white;
 }
 
 .info-pop {
