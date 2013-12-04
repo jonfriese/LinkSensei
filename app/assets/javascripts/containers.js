@@ -21,6 +21,8 @@ $(document).ready(function ()  {
     $("#staging-link").css('display', 'inline');
     $("#staging-link-2").css('display', 'none');
   });
+
+  $('.info-pop').popover({trigger: 'hover'});
 });
-$('.info-pop').popover({trigger: 'hover'});
+
 
