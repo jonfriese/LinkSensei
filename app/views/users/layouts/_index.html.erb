@@ -1,0 +1,25 @@
+  <div id="public_users_list">
+  <div class="search_form input-group">
+    <%= link_to 'Home', user_path(current_user), id:"link-back", remote: true  %>
+    <br>
+    <br>
+    <%= form_tag users_path, :method => 'get', remote: true do %>
+      <p>
+        <%= text_field_tag :search, params[:search], class:"form-control" %>
+      </p>
+      <p>
+        <%= submit_tag "Search users", :name => nil, class: "btn btn-default btn-small custombtn" %>
+      </p>
+    <% end %>
+  </div>
+
+  <div>
+  <h2>Listing Users</h2>
+  <% @users.each do |user| %>
+    <p>
+      <%= link_to "#{user.name}", user %>
+    </p>
+  <% end %>
+  </div>
+  <%= will_paginate @users %>
+</div>

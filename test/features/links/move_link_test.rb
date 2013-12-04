@@ -1,4 +1,5 @@
 require "test_helper"
+require "pry"
 
 feature "As a site user, I want to to move a link from the staging area into a container so that I can find it again more easily" do
   scenario "User moves a new link from the staging area to an existing container" do
