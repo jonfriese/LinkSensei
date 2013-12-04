@@ -51,7 +51,7 @@ feature "As a site user, I want to to add a link to my collection so that I use 
     within "#container_3" do
      find("#show").click
     end
-    save_and_open_page
+
     page.text.must_include "Test"
     page.text.must_include "example.com"
     page.text.must_include "test test test test test test test test " #full description

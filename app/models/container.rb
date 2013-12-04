@@ -7,10 +7,6 @@ class Container < ActiveRecord::Base
     link == "fc1e8c208ae63daf22f7659"
   end
 
-  def created_by?(user)
-    creator == user
-  end
-
   amoeba do
     enable
   end
