@@ -96,10 +96,10 @@ class ActiveSupport::TestCase
   def create_link
     #Then a modal window form should appear, and is filled in
     within("#container_2") do
-        find("#show").click
+      find("#add_link").click
     end
 
-    page.find("#add_link").click
+
     fill_in "Url", with: "www.google.com"
     fill_in "Name", with: "Google"
     fill_in "Description", with: "a search engine"

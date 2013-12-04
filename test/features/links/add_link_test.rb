@@ -25,7 +25,7 @@ feature "As a site user, I want to to add a link to my collection so that I use 
     page.has_content? "Link was successfully created."
   end
 
-  scenario "User creates a new link with a long name in an existing container and expands container to full page view" do
+  scenario "User creates a new link with a long description in an existing container and expands container to full page view" do
     sign_in
     create_container
 
@@ -39,6 +39,7 @@ feature "As a site user, I want to to add a link to my collection so that I use 
     click_on "Create Link"
     #Then the resulting page should show the new link in the chosen container
 
+
     within "#container_3" do
       text.must_include "Test"
       text.must_include "..." #desription is reduced
@@ -50,6 +51,7 @@ feature "As a site user, I want to to add a link to my collection so that I use 
     within "#container_3" do
      find("#show").click
     end
+    save_and_open_page
     page.text.must_include "Test"
     page.text.must_include "example.com"
     page.text.must_include "test test test test test test test test " #full description
