@@ -14,5 +14,9 @@ class UsersController < ApplicationController
   def index
     @users = User.where(:public_status => true).order(created_at: :desc).paginate(:page => params[:page], :per_page => 50)
     @users = @users.search(params[:search])
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 end
