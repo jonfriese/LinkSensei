@@ -7,8 +7,10 @@
           <% if on_my_page? %>
           <!-- trash -->
             <%= link_to '', [@user, container], method: :delete, data: { confirm: 'Are you sure?' }, class:"glyphicon glyphicon-trash container-icon", id:"destroy", remote: true %>
+          <% end %>
           <!-- popover description -->
-            <span class="info-pop" data-toggle="popover" data-placement="right" data-content="<%= container.description %>" data-original-title="Description"><span class="glyphicon glyphicon-info-sign"></span></span>
+          <span class="info-pop" data-toggle="popover" data-placement="right" data-content="<%= container.description %>" data-original-title="Description"><span class="glyphicon glyphicon-info-sign"></span></span>
+          <% if on_my_page? %>
             <!-- show container -->
             <%= link_to '', user_container_path(@user, container), class:'glyphicon glyphicon-new-window container-icon', id:"show" %>
             <!-- edit container -->

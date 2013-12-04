@@ -9,6 +9,7 @@
               <span>&#9733;</span>
               <!-- trash -->
               <%= link_to '', [@user, container], method: :delete, data: { confirm: 'Are you sure?' }, class:"glyphicon glyphicon-trash container-icon", id:"destroy", remote: true %>
+            <% end %>
               <!-- popover description -->
               <span class="info-pop" data-toggle="popover" data-placement="right" data-content="<%= container.description %>" data-original-title="Description"><span class="glyphicon glyphicon-info-sign"></span></span>
             <% if on_my_page? %>
