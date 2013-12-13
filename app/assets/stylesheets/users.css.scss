@@ -10,6 +10,10 @@
   display: none;
 }
 
+.link_name  {
+  font-size: 1.1em;
+}
+
 .content-well  {
   height: 200px !important;
   overflow-y: scroll;
@@ -122,6 +126,12 @@
     min-height: 10%;
     width: 100%;
     padding: 10px 15px 0px 15px;
+    margin-bottom: 0px;
+    bottom: auto;
+  }
+
+  .staging-left  {
+    margin-bottom: 0px;
   }
 
   #welcome-page-hr  {

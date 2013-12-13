@@ -2,7 +2,7 @@
 
     <% if on_my_page? %>
       <!-- show container -->
-      <%= link_to '', user_container_path(@user, container), class:'glyphicon glyphicon-new-window container-icon', id:"show", remote: true %>
+      <%= link_to '', user_container_path(@user, container), class:'glyphicon glyphicon-new-window container-icon', id:"show",remote: true %>
       <!-- edit container -->
       <%= link_to '', edit_user_container_path(@user, container), class: "glyphicon glyphicon-edit container-icon", id: "edit_"+ dom_id(container), remote: true %>
       <!-- add link to container -->
@@ -37,9 +37,9 @@
 <tbody>
   <% container.links.order(updated_at: :desc).each do |link| %>
     <tr id="link_<%= link.id %>">
-      <td><%= link_to link.name, url_with_protocol(link.url), :target => '_blank' %></td>
+      <td><%= link_to link.name, url_with_protocol(link.url), :target => '_blank', class:"link_name" %></td>
         <% if link.description.length > 30 %>
-          <td><%= link.description[1..30]+"..." %></td>
+          <td><%= link.description[0..30]+"..." %></td>
         <% else %>
           <td><%= link.description %></td>
         <% end %>
