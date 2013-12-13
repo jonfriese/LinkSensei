@@ -3,11 +3,11 @@ class Link < ActiveRecord::Base
   validates :url, presence: true
   validates :name, presence: true
   validates :description, length: { in: 0..140 }
-  validate :public_suffix
+  # validate :public_suffix
 
-  def public_suffix
-    if PublicSuffix.valid?(self.url) != true
-      self.errors.add(:url, "must have a public suffix")
-    end
+  # def public_suffix
+  #   if PublicSuffix.valid?(self.url) != true
+  #     self.errors.add(:url, "must have a public suffix")
+  #   end
   end
 end
