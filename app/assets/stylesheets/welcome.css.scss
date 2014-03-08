@@ -3,21 +3,19 @@
 .landing-page  {
   background-color: white !important;
   margin-top: -10px;
-  background-image: asset-url("Dojo.jpg", image);
-  background-image: cover;
-  position: fixed;
-  top:0;
-  bottom:0;
-  right:0;
-  left:0;
+ background:asset-url("Dojo.jpg", image)  no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+
+   background-attachment:fixed;
+    background-position:100% 100%;
 }
 
-#sign-in  {
-  float: right;
-}
-
-#sign-up  {
-  float: right;
+#signin  {
+  margin-top: 3em;
 }
 
 .main-description  {
@@ -38,7 +36,7 @@
 .brand  {
   font-family: sf_wasabiregular;
   color: white;
-  margin-top: 0px;
+  margin-top: 1em;
  text-shadow:
    -2px -2px 0 #67001a,
     2px -2px 0 #67001a,
