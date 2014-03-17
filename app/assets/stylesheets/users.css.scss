@@ -46,7 +46,10 @@
 .links  {
   list-style: none;
   float: right;
-  padding-top: 7px;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+  background-color:#67001a;
 }
 
 .links > li  {
