@@ -24,10 +24,11 @@ gem 'thin'
 
 group :development, :test do
   gem 'launchy'
-#  gem 'capybara-webkit'
   gem 'minitest-rails'
   gem 'minitest-rails-capybara'
   gem 'capybara_minitest_spec'
+  gem 'capybara-webkit'
+  gem 'selenium-webdriver'
   gem 'turn'
   gem 'pry'
   gem 'pry-rails'

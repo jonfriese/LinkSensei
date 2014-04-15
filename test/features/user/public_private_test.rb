@@ -37,6 +37,5 @@ feature "A user can change the user account privacy settings" do
     click_on "Home"
     click_on "Sign Out"
   end
-
 end
 
