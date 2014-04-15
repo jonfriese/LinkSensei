@@ -4,14 +4,14 @@
       <h1 class="brand">Link Sensei</h1>
       <div class="well">
         <p>LinkSensei gives you a way to easily group bookmarks.  Create containers for links, add descriptions, add links to a staging area, and move links to appropriate containers.</p>
-        <%= image_tag "screenshot.jpg", id: "screenshot" %>
+        <%= image_tag "screenshot.jpg", class: "img-responsive", id: "screenshot" %>
       </div>
     </div>
   <div class="col-lg-3 col-md-4 col-sm-4">
-    <div class="row" id="signin">
+    <div class="row well" id="signin">
        <%= render 'devise/layouts/signin' %>
     </div>
-    <div class="row" id="signup">
+    <div class="row well" id="signup">
       <%= render 'devise/layouts/signup' %>
     </div>
   </div>

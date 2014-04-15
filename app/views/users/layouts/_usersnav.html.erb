@@ -7,9 +7,9 @@
   <ul class="links nav">
     <% if current_user.present? %>
       <!-- public status hidden message -->
-      <li style="visibility: hidden">
+      <!-- <li style="visibility: hidden">
         <%= current_user.public_status == true ? "public account" : "private account" %>
-      </li>
+      </li> -->
       <% if @user == current_user %>
         <li>
           <%= link_to current_user.name, edit_user_registration_path(current_user) %>

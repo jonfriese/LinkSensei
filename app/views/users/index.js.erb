@@ -1,9 +1,9 @@
-$("#custom-well-left").children().hide();
+$("#custom-well-left").children().not(".exclude").hide();
 $("#custom-well-left").append("<%=j render("users/layouts/index") %>");
 $("#link-back").on('click', function() {
   $("#link-back").remove();
   $("#public_users_list").remove();
   $("#stagingnew").fadeIn('default');
   $("#new_link_label").html("New Link")
-  $("#custom-well-left").children().show();
+  $("#custom-well-left").children().not(".exclude").show().removeAttr("style");
 });

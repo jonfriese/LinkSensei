@@ -29,6 +29,10 @@
   padding-left: 0px !important;
 }
 
+.nav>li  {
+  float: left;
+}
+
 .fixed-nav  {
   top: 0;
   right: 0;
@@ -42,7 +46,10 @@
 .links  {
   list-style: none;
   float: right;
-  padding-top: 7px;
+}
+
+.nav>li>a:hover, .nav>li>a:focus {
+  background-color:#67001a !important;
 }
 
 .links > li  {
@@ -109,7 +116,7 @@
   color: #2a6496;
 }
 
-.container {
+.users-show .container {
   margin-top: 60px;
 }
 
@@ -122,6 +129,12 @@
     min-height: 10%;
     width: 100%;
     padding: 10px 15px 0px 15px;
+    margin-bottom: 0px;
+    bottom: auto;
+  }
+
+  .staging-left  {
+    margin-bottom: 0px;
   }
 
   #welcome-page-hr  {
@@ -154,6 +167,7 @@
 
   #reveal-this  {
     display: none;
+    margin-bottom: 0px;
   }
 
   .alert-success  {
@@ -175,5 +189,11 @@
   .nav > li > a {
       padding: 10px 6px;
     }
+}
+
+@media screen and (max-width: 420px)  {
+  .alert  {
+    margin-top: 30px;
+  }
 }
 
