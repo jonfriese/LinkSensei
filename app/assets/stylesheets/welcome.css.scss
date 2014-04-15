@@ -1,9 +1,11 @@
 /* Sign In & Sign Up */
 
 .landing-page  {
+  height: 100%;
+  width: 100%;
   background-color: white !important;
   margin-top: -10px;
-  background-image: asset-url("Dojo.jpg", image);
+  background-image: asset-url("8.jpg", image);
   background-image: cover;
   position: fixed;
   top:0;
@@ -27,23 +29,13 @@
 .form-title  {
   color: white;
   margin-top: 0px;
-   text-shadow:
-   -2px -2px 0 #67001a,
-    2px -2px 0 #67001a,
-    -2px 2px 0 #67001a,
-     2px 2px 0 #67001a;
-  font-family: sf_wasabiregular;
+  font-family: 'Lato', sans-serif;
 }
 
 .brand  {
-  font-family: sf_wasabiregular;
+  font-family: 'Lato', sans-serif;
   color: white;
   margin-top: 0px;
- text-shadow:
-   -2px -2px 0 #67001a,
-    2px -2px 0 #67001a,
-    -2px 2px 0 #67001a,
-     2px 2px 0 #67001a;
 }
 
 .rme-fgotpas {
