@@ -3,14 +3,11 @@
 .landing-page  {
   background-color: white !important;
   margin-top: -10px;
- background:asset-url("Dojo.jpg", image)  no-repeat center center fixed;
+   background-image: asset-url("8.jpg", image);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
-  background-size: cover;
-
-
-   background-attachment:fixed;
+  background-image: cover;
     background-position:100% 100%;
 }
 
