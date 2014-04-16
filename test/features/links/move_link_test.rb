@@ -13,12 +13,9 @@ feature "As a site user, I want to to move a link from the staging area into a c
     end
     select('A container', :from => 'link[container_id]')
     click_on "Update Link"
-
-    within("#container_2") do
-      find("#show").click
+    within("#container_3") do
+      text.must_include "Test"
     end
-    page.has_content? "Test"
-    click_on "Back"
     click_on "Sign Out"
  end
 end

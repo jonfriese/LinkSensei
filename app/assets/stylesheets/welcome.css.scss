@@ -1,6 +1,8 @@
 /* Sign In & Sign Up */
 
 .landing-page  {
+  height: 100%;
+  width: 100%;
   background-color: white !important;
   margin-top: -10px;
    background-image: asset-url("8.jpg", image);
@@ -9,49 +11,34 @@
   -o-background-size: cover;
   background-image: cover;
     background-position:100% 100%;
+
 }
+
 
 #signin  {
   margin-top: 3em;
 }
 
 .main-description  {
+  margin-top: 2.7em;
   margin-right: 20px;
 }
 
 .form-title  {
   color: white;
   margin-top: 0px;
-   text-shadow:
-   -2px -2px 0 #67001a,
-    2px -2px 0 #67001a,
-    -2px 2px 0 #67001a,
-     2px 2px 0 #67001a;
-  font-family: sf_wasabiregular;
+  font-family: 'Lato', sans-serif;
 }
 
 .brand  {
-  font-family: sf_wasabiregular;
+  font-family: 'Lato', sans-serif;
   color: white;
-  margin-top: 1em;
- text-shadow:
-   -2px -2px 0 #67001a,
-    2px -2px 0 #67001a,
-    -2px 2px 0 #67001a,
-     2px 2px 0 #67001a;
+  margin-top: 0px;
 }
 
 .rme-fgotpas {
   font-size: .9em;
   color: white;
-  text-shadow:
-   -1px -1px 0 #67001a,
-    1px -1px 0 #67001a,
-    -1px 1px 0 #67001a,
-     1px 1px 0 #67001a;
-     a {
-      color: white;
-     }
 }
 
 .forgot-pass  {
